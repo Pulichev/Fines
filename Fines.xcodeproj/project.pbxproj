@@ -12,6 +12,8 @@
 		9F7F673920AE1EBA0045BBD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F673720AE1EBA0045BBD4 /* Main.storyboard */; };
 		9F7F673B20AE1EBC0045BBD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F673A20AE1EBC0045BBD4 /* Assets.xcassets */; };
 		9F7F673E20AE1EBC0045BBD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F673C20AE1EBC0045BBD4 /* LaunchScreen.storyboard */; };
+		9F7F674920AE23690045BBD4 /* LicensePlateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674820AE23690045BBD4 /* LicensePlateModel.swift */; };
+		9F7F674D20AE291E0045BBD4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674C20AE291E0045BBD4 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		9F7F673A20AE1EBC0045BBD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F7F673D20AE1EBC0045BBD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F7F673F20AE1EBC0045BBD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F7F674820AE23690045BBD4 /* LicensePlateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateModel.swift; sourceTree = "<group>"; };
+		9F7F674C20AE291E0045BBD4 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		9F7F673220AE1EBA0045BBD4 /* Fines */ = {
 			isa = PBXGroup;
 			children = (
+				9F7F674A20AE29070045BBD4 /* Common */,
 				9F7F674620AE22180045BBD4 /* Models */,
 				9F7F674720AE22200045BBD4 /* Supporting files */,
 			);
@@ -63,6 +68,7 @@
 		9F7F674620AE22180045BBD4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9F7F674820AE23690045BBD4 /* LicensePlateModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -78,6 +84,22 @@
 				9F7F673F20AE1EBC0045BBD4 /* Info.plist */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		9F7F674A20AE29070045BBD4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F674B20AE29120045BBD4 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9F7F674B20AE29120045BBD4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F674C20AE291E0045BBD4 /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F7F673620AE1EBA0045BBD4 /* ViewController.swift in Sources */,
+				9F7F674920AE23690045BBD4 /* LicensePlateModel.swift in Sources */,
+				9F7F674D20AE291E0045BBD4 /* String.swift in Sources */,
 				9F7F673420AE1EBA0045BBD4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8RV5S3P38;
-				INFOPLIST_FILE = Fines/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Fines/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8RV5S3P38;
-				INFOPLIST_FILE = Fines/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Fines/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
