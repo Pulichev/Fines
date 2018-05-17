@@ -54,6 +54,22 @@
 		9F7F673220AE1EBA0045BBD4 /* Fines */ = {
 			isa = PBXGroup;
 			children = (
+				9F7F674620AE22180045BBD4 /* Models */,
+				9F7F674720AE22200045BBD4 /* Supporting files */,
+			);
+			path = Fines;
+			sourceTree = "<group>";
+		};
+		9F7F674620AE22180045BBD4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9F7F674720AE22200045BBD4 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
 				9F7F673320AE1EBA0045BBD4 /* AppDelegate.swift */,
 				9F7F673520AE1EBA0045BBD4 /* ViewController.swift */,
 				9F7F673720AE1EBA0045BBD4 /* Main.storyboard */,
@@ -61,7 +77,7 @@
 				9F7F673C20AE1EBC0045BBD4 /* LaunchScreen.storyboard */,
 				9F7F673F20AE1EBC0045BBD4 /* Info.plist */,
 			);
-			path = Fines;
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
