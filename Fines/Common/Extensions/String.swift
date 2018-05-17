@@ -8,7 +8,12 @@
 
 extension String {
   
+  /// Returns true if fully matches regex, false if not
   func matches(_ regex: String) -> Bool {
     return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+  }
+  
+  var cyrrilicTransliterated: String? {
+    return applyingTransform(.latinToCyrillic, reverse: false)
   }
 }
