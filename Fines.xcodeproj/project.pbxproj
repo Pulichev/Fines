@@ -16,6 +16,7 @@
 		9F7F674920AE23690045BBD4 /* LicensePlateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674820AE23690045BBD4 /* LicensePlateModel.swift */; };
 		9F7F674D20AE291E0045BBD4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674C20AE291E0045BBD4 /* String.swift */; };
 		9F7F674F20AE34970045BBD4 /* DriverLicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674E20AE34970045BBD4 /* DriverLicenseModel.swift */; };
+		9F7F675320AEAFEF0045BBD4 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F675220AEAFEF0045BBD4 /* Onboarding.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9F7F674820AE23690045BBD4 /* LicensePlateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateModel.swift; sourceTree = "<group>"; };
 		9F7F674C20AE291E0045BBD4 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9F7F674E20AE34970045BBD4 /* DriverLicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLicenseModel.swift; sourceTree = "<group>"; };
+		9F7F675220AEAFEF0045BBD4 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		B05735E6C6D22D608B6C071D /* Pods-Fines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fines/Pods-Fines.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF4A459ED90EC9C4C7013C8 /* Pods_Fines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 			children = (
 				9F7F674A20AE29070045BBD4 /* Common */,
 				9F7F674620AE22180045BBD4 /* Models */,
+				9F7F675120AEAF230045BBD4 /* Stories */,
 				9F7F674720AE22200045BBD4 /* Supporting files */,
 			);
 			path = Fines;
@@ -127,6 +130,46 @@
 				9F7F674C20AE291E0045BBD4 /* String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9F7F675120AEAF230045BBD4 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F675420AEAFF30045BBD4 /* Onboarding */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		9F7F675420AEAFF30045BBD4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F675520AEAFFA0045BBD4 /* Stroyboard */,
+				9F7F675720AEB0190045BBD4 /* Logic */,
+				9F7F675620AEB00D0045BBD4 /* View */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		9F7F675520AEAFFA0045BBD4 /* Stroyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F675220AEAFEF0045BBD4 /* Onboarding.storyboard */,
+			);
+			path = Stroyboard;
+			sourceTree = "<group>";
+		};
+		9F7F675620AEB00D0045BBD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F7F675720AEB0190045BBD4 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +236,7 @@
 				9F7F673E20AE1EBC0045BBD4 /* LaunchScreen.storyboard in Resources */,
 				9F7F673B20AE1EBC0045BBD4 /* Assets.xcassets in Resources */,
 				9F7F673920AE1EBA0045BBD4 /* Main.storyboard in Resources */,
+				9F7F675320AEAFEF0045BBD4 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +453,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8RV5S3P38;
 				INFOPLIST_FILE = "$(SRCROOT)/Fines/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vp.Fines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -425,7 +472,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8RV5S3P38;
 				INFOPLIST_FILE = "$(SRCROOT)/Fines/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vp.Fines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
