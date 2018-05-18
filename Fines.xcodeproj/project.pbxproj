@@ -17,6 +17,7 @@
 		9F7F674D20AE291E0045BBD4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674C20AE291E0045BBD4 /* String.swift */; };
 		9F7F674F20AE34970045BBD4 /* DriverLicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674E20AE34970045BBD4 /* DriverLicenseModel.swift */; };
 		9F7F675320AEAFEF0045BBD4 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F675220AEAFEF0045BBD4 /* Onboarding.storyboard */; };
+		9F7F675D20AEB1010045BBD4 /* Capabilities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F675C20AEB1010045BBD4 /* Capabilities.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9F7F674C20AE291E0045BBD4 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9F7F674E20AE34970045BBD4 /* DriverLicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLicenseModel.swift; sourceTree = "<group>"; };
 		9F7F675220AEAFEF0045BBD4 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		9F7F675C20AEB1010045BBD4 /* Capabilities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Capabilities.storyboard; sourceTree = "<group>"; };
 		B05735E6C6D22D608B6C071D /* Pods-Fines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fines/Pods-Fines.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF4A459ED90EC9C4C7013C8 /* Pods_Fines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 		9F7F675120AEAF230045BBD4 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				9F7F675820AEB0540045BBD4 /* Capabilities */,
 				9F7F675420AEAFF30045BBD4 /* Onboarding */,
 			);
 			path = Stories;
@@ -170,6 +173,38 @@
 			children = (
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		9F7F675820AEB0540045BBD4 /* Capabilities */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F675920AEB0D10045BBD4 /* Storyboard */,
+				9F7F675A20AEB0DF0045BBD4 /* Logic */,
+				9F7F675B20AEB0E50045BBD4 /* View */,
+			);
+			path = Capabilities;
+			sourceTree = "<group>";
+		};
+		9F7F675920AEB0D10045BBD4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F675C20AEB1010045BBD4 /* Capabilities.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		9F7F675A20AEB0DF0045BBD4 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		9F7F675B20AEB0E50045BBD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F7F673E20AE1EBC0045BBD4 /* LaunchScreen.storyboard in Resources */,
+				9F7F675D20AEB1010045BBD4 /* Capabilities.storyboard in Resources */,
 				9F7F673B20AE1EBC0045BBD4 /* Assets.xcassets in Resources */,
 				9F7F673920AE1EBA0045BBD4 /* Main.storyboard in Resources */,
 				9F7F675320AEAFEF0045BBD4 /* Onboarding.storyboard in Resources */,
