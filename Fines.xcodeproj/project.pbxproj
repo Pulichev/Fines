@@ -9,27 +9,49 @@
 /* Begin PBXBuildFile section */
 		7862A2501B905717A6E1696E /* Pods_Fines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF4A459ED90EC9C4C7013C8 /* Pods_Fines.framework */; };
 		9F7F673420AE1EBA0045BBD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F673320AE1EBA0045BBD4 /* AppDelegate.swift */; };
-		9F7F673620AE1EBA0045BBD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F673520AE1EBA0045BBD4 /* ViewController.swift */; };
-		9F7F673920AE1EBA0045BBD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F673720AE1EBA0045BBD4 /* Main.storyboard */; };
 		9F7F673B20AE1EBC0045BBD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F673A20AE1EBC0045BBD4 /* Assets.xcassets */; };
 		9F7F673E20AE1EBC0045BBD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F673C20AE1EBC0045BBD4 /* LaunchScreen.storyboard */; };
-		9F7F674920AE23690045BBD4 /* LicensePlateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674820AE23690045BBD4 /* LicensePlateModel.swift */; };
+		9F7F674920AE23690045BBD4 /* LicensePlateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674820AE23690045BBD4 /* LicensePlateValidator.swift */; };
 		9F7F674D20AE291E0045BBD4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674C20AE291E0045BBD4 /* String.swift */; };
-		9F7F674F20AE34970045BBD4 /* DriverLicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674E20AE34970045BBD4 /* DriverLicenseModel.swift */; };
+		9F7F674F20AE34970045BBD4 /* DriverLicenseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F674E20AE34970045BBD4 /* DriverLicenseValidator.swift */; };
+		9F7F675320AEAFEF0045BBD4 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F675220AEAFEF0045BBD4 /* Onboarding.storyboard */; };
+		9F7F675D20AEB1010045BBD4 /* Capabilities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F675C20AEB1010045BBD4 /* Capabilities.storyboard */; };
+		9F7F676020AEB17B0045BBD4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F675F20AEB17B0045BBD4 /* Router.swift */; };
+		9F7F678320AF55930045BBD4 /* LicenseInfoEnteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F678220AF55930045BBD4 /* LicenseInfoEnteringViewController.swift */; };
+		9F7F678920AF587A0045BBD4 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F678520AF58790045BBD4 /* SF-Pro-Text-Semibold.otf */; };
+		9F7F678A20AF587A0045BBD4 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F678620AF587A0045BBD4 /* SF-Pro-Text-Regular.otf */; };
+		9F7F678B20AF587A0045BBD4 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F678720AF587A0045BBD4 /* SF-Pro-Text-Light.otf */; };
+		9F7F678C20AF587A0045BBD4 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F678820AF587A0045BBD4 /* SF-Pro-Text-Medium.otf */; };
+		9F7F678E20AF631E0045BBD4 /* LicenseInfoEnteringPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F678D20AF631E0045BBD4 /* LicenseInfoEnteringPresenter.swift */; };
+		9FB0345D20B00DDD0019BD79 /* SwinjectAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0345C20B00DDD0019BD79 /* SwinjectAssembler.swift */; };
+		9FB0345F20B00EAF0019BD79 /* OnboardingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0345E20B00EAF0019BD79 /* OnboardingAssembly.swift */; };
+		9FB0346120B00F710019BD79 /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0346020B00F710019BD79 /* ServicesAssembly.swift */; };
+		9FB0346420B01D7C0019BD79 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0346320B01D7C0019BD79 /* Assets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		79B36CF1B78D774782A0F00A /* Pods-Fines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fines.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fines/Pods-Fines.release.xcconfig"; sourceTree = "<group>"; };
 		9F7F673020AE1EBA0045BBD4 /* Fines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7F673320AE1EBA0045BBD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F7F673520AE1EBA0045BBD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9F7F673820AE1EBA0045BBD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F7F673A20AE1EBC0045BBD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F7F673D20AE1EBC0045BBD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F7F673F20AE1EBC0045BBD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F7F674820AE23690045BBD4 /* LicensePlateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateModel.swift; sourceTree = "<group>"; };
+		9F7F674820AE23690045BBD4 /* LicensePlateValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateValidator.swift; sourceTree = "<group>"; };
 		9F7F674C20AE291E0045BBD4 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		9F7F674E20AE34970045BBD4 /* DriverLicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLicenseModel.swift; sourceTree = "<group>"; };
+		9F7F674E20AE34970045BBD4 /* DriverLicenseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLicenseValidator.swift; sourceTree = "<group>"; };
+		9F7F675220AEAFEF0045BBD4 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		9F7F675C20AEB1010045BBD4 /* Capabilities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Capabilities.storyboard; sourceTree = "<group>"; };
+		9F7F675F20AEB17B0045BBD4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		9F7F678220AF55930045BBD4 /* LicenseInfoEnteringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseInfoEnteringViewController.swift; sourceTree = "<group>"; };
+		9F7F678520AF58790045BBD4 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		9F7F678620AF587A0045BBD4 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		9F7F678720AF587A0045BBD4 /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
+		9F7F678820AF587A0045BBD4 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		9F7F678D20AF631E0045BBD4 /* LicenseInfoEnteringPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseInfoEnteringPresenter.swift; sourceTree = "<group>"; };
+		9FB0345C20B00DDD0019BD79 /* SwinjectAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectAssembler.swift; sourceTree = "<group>"; };
+		9FB0345E20B00EAF0019BD79 /* OnboardingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAssembly.swift; sourceTree = "<group>"; };
+		9FB0346020B00F710019BD79 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
+		9FB0346320B01D7C0019BD79 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		B05735E6C6D22D608B6C071D /* Pods-Fines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fines/Pods-Fines.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF4A459ED90EC9C4C7013C8 /* Pods_Fines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,8 +106,11 @@
 		9F7F673220AE1EBA0045BBD4 /* Fines */ = {
 			isa = PBXGroup;
 			children = (
+				9FB0345B20B00D8A0019BD79 /* Swinject */,
+				9F7F675E20AEB1630045BBD4 /* Services */,
 				9F7F674A20AE29070045BBD4 /* Common */,
 				9F7F674620AE22180045BBD4 /* Models */,
+				9F7F675120AEAF230045BBD4 /* Stories */,
 				9F7F674720AE22200045BBD4 /* Supporting files */,
 			);
 			path = Fines;
@@ -94,8 +119,8 @@
 		9F7F674620AE22180045BBD4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9F7F674820AE23690045BBD4 /* LicensePlateModel.swift */,
-				9F7F674E20AE34970045BBD4 /* DriverLicenseModel.swift */,
+				9F7F674820AE23690045BBD4 /* LicensePlateValidator.swift */,
+				9F7F674E20AE34970045BBD4 /* DriverLicenseValidator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,9 +128,8 @@
 		9F7F674720AE22200045BBD4 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				9F7F678420AF58660045BBD4 /* Fonts */,
 				9F7F673320AE1EBA0045BBD4 /* AppDelegate.swift */,
-				9F7F673520AE1EBA0045BBD4 /* ViewController.swift */,
-				9F7F673720AE1EBA0045BBD4 /* Main.storyboard */,
 				9F7F673A20AE1EBC0045BBD4 /* Assets.xcassets */,
 				9F7F673C20AE1EBC0045BBD4 /* LaunchScreen.storyboard */,
 				9F7F673F20AE1EBC0045BBD4 /* Info.plist */,
@@ -116,6 +140,7 @@
 		9F7F674A20AE29070045BBD4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9FB0346220B01D6B0019BD79 /* Helpers */,
 				9F7F674B20AE29120045BBD4 /* Extensions */,
 			);
 			path = Common;
@@ -127,6 +152,118 @@
 				9F7F674C20AE291E0045BBD4 /* String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9F7F675120AEAF230045BBD4 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F675820AEB0540045BBD4 /* Capabilities */,
+				9F7F675420AEAFF30045BBD4 /* Onboarding */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		9F7F675420AEAFF30045BBD4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F675520AEAFFA0045BBD4 /* Stroyboard */,
+				9F7F675720AEB0190045BBD4 /* Logic */,
+				9F7F675620AEB00D0045BBD4 /* View */,
+				9FB0345E20B00EAF0019BD79 /* OnboardingAssembly.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		9F7F675520AEAFFA0045BBD4 /* Stroyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F675220AEAFEF0045BBD4 /* Onboarding.storyboard */,
+			);
+			path = Stroyboard;
+			sourceTree = "<group>";
+		};
+		9F7F675620AEB00D0045BBD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F678220AF55930045BBD4 /* LicenseInfoEnteringViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F7F675720AEB0190045BBD4 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F678D20AF631E0045BBD4 /* LicenseInfoEnteringPresenter.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		9F7F675820AEB0540045BBD4 /* Capabilities */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F675920AEB0D10045BBD4 /* Storyboard */,
+				9F7F675A20AEB0DF0045BBD4 /* Logic */,
+				9F7F675B20AEB0E50045BBD4 /* View */,
+			);
+			path = Capabilities;
+			sourceTree = "<group>";
+		};
+		9F7F675920AEB0D10045BBD4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F675C20AEB1010045BBD4 /* Capabilities.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		9F7F675A20AEB0DF0045BBD4 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		9F7F675B20AEB0E50045BBD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F7F675E20AEB1630045BBD4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F675F20AEB17B0045BBD4 /* Router.swift */,
+				9FB0346020B00F710019BD79 /* ServicesAssembly.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9F7F678420AF58660045BBD4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F678720AF587A0045BBD4 /* SF-Pro-Text-Light.otf */,
+				9F7F678820AF587A0045BBD4 /* SF-Pro-Text-Medium.otf */,
+				9F7F678620AF587A0045BBD4 /* SF-Pro-Text-Regular.otf */,
+				9F7F678520AF58790045BBD4 /* SF-Pro-Text-Semibold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9FB0345B20B00D8A0019BD79 /* Swinject */ = {
+			isa = PBXGroup;
+			children = (
+				9FB0345C20B00DDD0019BD79 /* SwinjectAssembler.swift */,
+			);
+			path = Swinject;
+			sourceTree = "<group>";
+		};
+		9FB0346220B01D6B0019BD79 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9FB0346320B01D7C0019BD79 /* Assets.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,9 +327,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F7F678920AF587A0045BBD4 /* SF-Pro-Text-Semibold.otf in Resources */,
 				9F7F673E20AE1EBC0045BBD4 /* LaunchScreen.storyboard in Resources */,
+				9F7F678B20AF587A0045BBD4 /* SF-Pro-Text-Light.otf in Resources */,
+				9F7F675D20AEB1010045BBD4 /* Capabilities.storyboard in Resources */,
 				9F7F673B20AE1EBC0045BBD4 /* Assets.xcassets in Resources */,
-				9F7F673920AE1EBA0045BBD4 /* Main.storyboard in Resources */,
+				9F7F675320AEAFEF0045BBD4 /* Onboarding.storyboard in Resources */,
+				9F7F678A20AF587A0045BBD4 /* SF-Pro-Text-Regular.otf in Resources */,
+				9F7F678C20AF587A0045BBD4 /* SF-Pro-Text-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,10 +349,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Fines/Pods-Fines-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -257,25 +403,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F7F673620AE1EBA0045BBD4 /* ViewController.swift in Sources */,
-				9F7F674920AE23690045BBD4 /* LicensePlateModel.swift in Sources */,
+				9F7F674920AE23690045BBD4 /* LicensePlateValidator.swift in Sources */,
+				9FB0346420B01D7C0019BD79 /* Assets.swift in Sources */,
+				9FB0346120B00F710019BD79 /* ServicesAssembly.swift in Sources */,
 				9F7F674D20AE291E0045BBD4 /* String.swift in Sources */,
-				9F7F674F20AE34970045BBD4 /* DriverLicenseModel.swift in Sources */,
+				9F7F678E20AF631E0045BBD4 /* LicenseInfoEnteringPresenter.swift in Sources */,
+				9F7F674F20AE34970045BBD4 /* DriverLicenseValidator.swift in Sources */,
+				9F7F678320AF55930045BBD4 /* LicenseInfoEnteringViewController.swift in Sources */,
+				9F7F676020AEB17B0045BBD4 /* Router.swift in Sources */,
+				9FB0345F20B00EAF0019BD79 /* OnboardingAssembly.swift in Sources */,
 				9F7F673420AE1EBA0045BBD4 /* AppDelegate.swift in Sources */,
+				9FB0345D20B00DDD0019BD79 /* SwinjectAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9F7F673720AE1EBA0045BBD4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F7F673820AE1EBA0045BBD4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9F7F673C20AE1EBC0045BBD4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -409,7 +553,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8RV5S3P38;
 				INFOPLIST_FILE = "$(SRCROOT)/Fines/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vp.Fines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -425,7 +573,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8RV5S3P38;
 				INFOPLIST_FILE = "$(SRCROOT)/Fines/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vp.Fines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

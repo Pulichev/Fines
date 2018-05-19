@@ -13,10 +13,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    
+    configureInitialUI()
+    
     return true
+  }
+  
+  func configureInitialUI() {
+    let windowFrame = UIScreen.main.bounds
+    window = UIWindow(frame: windowFrame)
+    let onboardingVC = SwinjectAssembler.shared.assembleStoryOnboarding()
+    let navigationController = UINavigationController(rootViewController: onboardingVC)
+    window!.rootViewController = navigationController
+    window!.makeKeyAndVisible()
+    
+    SwinjectAssembler.shared.setupAppRouter(window: window!, navigationController: navigationController)
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
