@@ -149,6 +149,7 @@
 				9F7F678420AF58660045BBD4 /* Fonts */,
 				9F7F673320AE1EBA0045BBD4 /* AppDelegate.swift */,
 				9F7F673A20AE1EBC0045BBD4 /* Assets.xcassets */,
+				9FB0346320B01D7C0019BD79 /* Assets.swift */,
 				9F7F673C20AE1EBC0045BBD4 /* LaunchScreen.storyboard */,
 				9F7F673F20AE1EBC0045BBD4 /* Info.plist */,
 			);
@@ -158,7 +159,6 @@
 		9F7F674A20AE29070045BBD4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				9FB0346220B01D6B0019BD79 /* Helpers */,
 				9F7F674B20AE29120045BBD4 /* Extensions */,
 			);
 			path = Common;
@@ -272,14 +272,6 @@
 				9FB0345C20B00DDD0019BD79 /* SwinjectAssembler.swift */,
 			);
 			path = Swinject;
-			sourceTree = "<group>";
-		};
-		9FB0346220B01D6B0019BD79 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				9FB0346320B01D7C0019BD79 /* Assets.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9FF6314120B0B70900B2444E /* HomePage */ = {
