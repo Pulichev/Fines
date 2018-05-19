@@ -13,6 +13,7 @@ protocol Router: class {
   func present(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?)
   
   func navigateToLicenseInfoEntering(licenseType type: LicenseType)
+  func navigateToCapabilitiesPreview()
 }
 
 class RouterDefault: Router {
@@ -29,5 +30,9 @@ class RouterDefault: Router {
     vc.licenseType = type
     
     navigationController?.pushViewController(vc, animated: true)
+  }
+  
+  func navigateToCapabilitiesPreview() {
+    
   }
 }

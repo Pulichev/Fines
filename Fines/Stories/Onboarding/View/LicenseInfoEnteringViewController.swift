@@ -15,6 +15,33 @@ enum LicenseType {
   case vehicleRegistration
 }
 
+struct LicenseEnteringVCUIInfo {
+  
+  var imageName: String
+  var labelText: String
+  var textFieldPlaceholderText: String
+  
+  init(for type: LicenseType) {
+    switch type {
+    case .plate:
+      imageName = Assets.onboardingVehiclePlate.rawValue
+      labelText = "Укажите регистрационный номер ТС"
+      textFieldPlaceholderText = "A111AA 77"
+      break
+    case .vehicleRegistration:
+      imageName = Assets.onboardingVehicleRegistration.rawValue
+      labelText = "Укажите номер свидетельства о регистрации ТС"
+      textFieldPlaceholderText = "77 АА 101010"
+      break
+    case .driverRegistration:
+      imageName = Assets.onboardingDriverRegistration.rawValue
+      labelText = "Укажите номер водительского удостоверения"
+      textFieldPlaceholderText = "77 AA 101010"
+      break
+    }
+  }
+}
+
 class LicenseInfoEnteringViewController: UIViewController {
   
   var licenseType: LicenseType = .plate // default
@@ -38,32 +65,17 @@ class LicenseInfoEnteringViewController: UIViewController {
     navigationController?.isNavigationBarHidden = true
     
     setupUI()
+    
     licenseInfoEnteringPresenter?.viewDidLoad(withType: licenseType)
   }
   
   // MARK: UI configure
   
   private func setupUI() {
-    switch licenseType {
-    case .plate:
-      let image = UIImage(named: Assets.onboardingVehiclePlate.rawValue)
-      licenseExampleImageView.image = image
-      licenseInfoLabel.text = "Укажите регистрационный номер ТС"
-      licenseInfoTextField.placeholder = "A111AA 77"
-      break
-    case .vehicleRegistration:
-      let image = UIImage(named: Assets.onboardingVehicleRegistration.rawValue)
-      licenseExampleImageView.image = image
-      licenseInfoLabel.text = "Укажите номер свидетельства о регистрации ТС"
-      licenseInfoTextField.placeholder = "77 АА 101010"
-      break
-    case .driverRegistration:
-      let image = UIImage(named: Assets.onboardingDriverRegistration.rawValue)
-      licenseExampleImageView.image = image
-      licenseInfoLabel.text = "Укажите номер водительского удостоверения"
-      licenseInfoTextField.placeholder = "77 AA 101010"
-      break
-    }
+    let interfaceInfo = LicenseEnteringVCUIInfo(for: licenseType)
+    licenseExampleImageView.image = UIImage(named: interfaceInfo.imageName)
+    licenseInfoLabel.text = interfaceInfo.labelText
+    licenseInfoTextField.placeholder = interfaceInfo.textFieldPlaceholderText
   }
   
   @IBAction func licenseInfoTextFieldTextChanged(_ sender: UITextField) {
@@ -73,7 +85,7 @@ class LicenseInfoEnteringViewController: UIViewController {
   }
   
   @IBAction func rightBarButtonItemTapped(_ sender: UIBarButtonItem) {
-    licenseInfoEnteringPresenter?.navigateToNextLicenseInfoEnteringType()
+    licenseInfoEnteringPresenter?.navigateToNextStep()
   }
 }
 
