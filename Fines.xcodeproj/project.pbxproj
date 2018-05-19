@@ -27,6 +27,9 @@
 		9FB0345F20B00EAF0019BD79 /* OnboardingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0345E20B00EAF0019BD79 /* OnboardingAssembly.swift */; };
 		9FB0346120B00F710019BD79 /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0346020B00F710019BD79 /* ServicesAssembly.swift */; };
 		9FB0346420B01D7C0019BD79 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0346320B01D7C0019BD79 /* Assets.swift */; };
+		9FF6313820B04E1400B2444E /* LicenseEnteringVCUIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6313720B04E1400B2444E /* LicenseEnteringVCUIInfo.swift */; };
+		9FF6313A20B0521E00B2444E /* CapabilitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6313920B0521E00B2444E /* CapabilitiesViewController.swift */; };
+		9FF6313C20B05C6A00B2444E /* CapabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6313B20B05C6A00B2444E /* CapabilityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		9FB0345E20B00EAF0019BD79 /* OnboardingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAssembly.swift; sourceTree = "<group>"; };
 		9FB0346020B00F710019BD79 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
 		9FB0346320B01D7C0019BD79 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		9FF6313720B04E1400B2444E /* LicenseEnteringVCUIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseEnteringVCUIInfo.swift; sourceTree = "<group>"; };
+		9FF6313920B0521E00B2444E /* CapabilitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapabilitiesViewController.swift; sourceTree = "<group>"; };
+		9FF6313B20B05C6A00B2444E /* CapabilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapabilityViewController.swift; sourceTree = "<group>"; };
 		B05735E6C6D22D608B6C071D /* Pods-Fines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fines/Pods-Fines.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF4A459ED90EC9C4C7013C8 /* Pods_Fines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -186,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				9F7F678220AF55930045BBD4 /* LicenseInfoEnteringViewController.swift */,
+				9FF6313720B04E1400B2444E /* LicenseEnteringVCUIInfo.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				9F7F675920AEB0D10045BBD4 /* Storyboard */,
-				9F7F675A20AEB0DF0045BBD4 /* Logic */,
 				9F7F675B20AEB0E50045BBD4 /* View */,
 			);
 			path = Capabilities;
@@ -216,16 +222,11 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		9F7F675A20AEB0DF0045BBD4 /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Logic;
-			sourceTree = "<group>";
-		};
 		9F7F675B20AEB0E50045BBD4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FF6313920B0521E00B2444E /* CapabilitiesViewController.swift */,
+				9FF6313B20B05C6A00B2444E /* CapabilityViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -409,10 +410,13 @@
 				9F7F674D20AE291E0045BBD4 /* String.swift in Sources */,
 				9F7F678E20AF631E0045BBD4 /* LicenseInfoEnteringPresenter.swift in Sources */,
 				9F7F674F20AE34970045BBD4 /* DriverLicenseValidator.swift in Sources */,
+				9FF6313820B04E1400B2444E /* LicenseEnteringVCUIInfo.swift in Sources */,
 				9F7F678320AF55930045BBD4 /* LicenseInfoEnteringViewController.swift in Sources */,
 				9F7F676020AEB17B0045BBD4 /* Router.swift in Sources */,
 				9FB0345F20B00EAF0019BD79 /* OnboardingAssembly.swift in Sources */,
+				9FF6313A20B0521E00B2444E /* CapabilitiesViewController.swift in Sources */,
 				9F7F673420AE1EBA0045BBD4 /* AppDelegate.swift in Sources */,
+				9FF6313C20B05C6A00B2444E /* CapabilityViewController.swift in Sources */,
 				9FB0345D20B00DDD0019BD79 /* SwinjectAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

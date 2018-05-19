@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="kXk-2P-kKk">
             <objects>
-                <viewController storyboardIdentifier="WelcomeViewController" id="46w-zr-bai" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="46w-zr-bai" userLabel="Welcome View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R6H-Ec-iCz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,9 +109,9 @@
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding_vehicle_plate" translatesAutoresizingMaskIntoConstraints="NO" id="fl0-ys-lDZ" userLabel="License example imageView">
-                                <rect key="frame" x="40" y="64" width="295" height="128.5"/>
+                                <rect key="frame" x="40" y="64" width="295" height="87.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="fl0-ys-lDZ" secondAttribute="height" multiplier="147:64" id="4rq-nn-3dA"/>
+                                    <constraint firstAttribute="width" secondItem="fl0-ys-lDZ" secondAttribute="height" multiplier="586:174" id="4rq-nn-3dA"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="450" id="vpr-hV-i7a"/>
                                 </constraints>
                             </imageView>

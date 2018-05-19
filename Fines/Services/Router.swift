@@ -33,6 +33,8 @@ class RouterDefault: Router {
   }
   
   func navigateToCapabilitiesPreview() {
+    let vc = CapabilitiesViewController.assembleFromStoryboard()
     
+    navigationController?.pushViewController(vc, animated: true)
   }
 }
