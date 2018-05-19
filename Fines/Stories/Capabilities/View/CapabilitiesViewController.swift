@@ -14,8 +14,13 @@ class CapabilitiesViewController: UIViewController {
   
   let capabilitiesInfoDataSource = CapabilitiesInfo()
   var pageController: UIPageViewController!
-  var currentIndex = 0
+  var currentIndex = 0 {
+    didSet {
+      changeButtonsVisibilityIfNeeded()
+    }
+  }
   var pendingIndex = 0
+  var pageControllerIsAnimating = false
   
   // MARK: @IBOutlets
   
@@ -55,7 +60,8 @@ class CapabilitiesViewController: UIViewController {
     pageControl.currentPage = 0
   }
   
-  func changeButtonsVisibility(isLastPage: Bool) {
+  func changeButtonsVisibilityIfNeeded() {
+    let isLastPage = currentIndex == capabilitiesInfoDataSource.count - 1
     if isLastPage {
       view.bringSubview(toFront: goToFinesButton)
     } else {

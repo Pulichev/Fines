@@ -13,6 +13,7 @@ import UIKit
 extension CapabilitiesViewController: UIPageViewControllerDelegate {
   
   func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+    pageControllerIsAnimating = true
     if let pendingCapabilityViewController = pendingViewControllers.first as? CapabilityViewController {
       pendingIndex = pendingCapabilityViewController.index
     }
@@ -22,24 +23,26 @@ extension CapabilitiesViewController: UIPageViewControllerDelegate {
     if completed {
       currentIndex = pendingIndex
       pageControl.currentPage = currentIndex
-      let isLastPage = currentIndex == capabilitiesInfoDataSource.count - 1
-      changeButtonsVisibility(isLastPage: isLastPage)
+      pageControllerIsAnimating = false
     }
   }
   
   // Manual change for next page
   func scrollPageToNextIfPossible() {
+    guard !pageControllerIsAnimating else { return }
     let nextIndex = currentIndex + 1
     
     if nextIndex < capabilitiesInfoDataSource.count,
       let previewViewController = createPreviewViewController(atIndex: nextIndex) {
-      currentIndex = nextIndex
+      pageControllerIsAnimating = true
       pageController.setViewControllers([previewViewController],
                                         direction: .forward,
                                         animated: true,
                                         completion: { isCompleted in
                                           if isCompleted {
+                                            self.currentIndex = nextIndex
                                             self.pageControl.currentPage = nextIndex
+                                            self.pageControllerIsAnimating = false
                                           }
       })
     }
