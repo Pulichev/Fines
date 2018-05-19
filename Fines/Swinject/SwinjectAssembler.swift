@@ -24,7 +24,8 @@ class SwinjectAssembler: NSObject {
     ServicesAssembly(),
     
     // stories
-    OnboardingAssembly()
+    OnboardingAssembly(),
+    HomePageAssembly()
     ], container: SwinjectStoryboard.defaultContainer)
   
   // MARK: External Interface
