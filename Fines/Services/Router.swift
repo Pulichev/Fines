@@ -11,14 +11,23 @@ import UIKit
 protocol Router: class {
   
   func present(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?)
+  
+  func navigateToLicenseInfoEntering(licenseType type: LicenseType)
 }
 
 class RouterDefault: Router {
   
-  public weak var window: UIWindow?
-  public weak var navigationController: UINavigationController?
+  weak var window: UIWindow?
+  weak var navigationController: UINavigationController?
   
-  public func present(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+  func present(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
     navigationController?.present(viewController, animated: animated, completion: completion)
+  }
+  
+  func navigateToLicenseInfoEntering(licenseType type: LicenseType) {
+    let vc = LicenseInfoEnteringViewController()
+    vc.licenseType = type
+    
+    navigationController?.pushViewController(vc, animated: true)
   }
 }

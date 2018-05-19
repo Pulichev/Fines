@@ -1,11 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="46w-zr-bai">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="kXk-2P-kKk">
+            <objects>
+                <viewController id="46w-zr-bai" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R6H-Ec-iCz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gNB-IE-Ebr" userLabel="Background Image View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="562"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QIa-YU-6VW" userLabel="Preview Image View">
+                                <rect key="frame" x="25" y="176.5" width="324" height="405.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QIa-YU-6VW" secondAttribute="height" multiplier="2:2.5" id="Wwv-Yg-Pvs"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLq-z0-bWX" userLabel="Enter info button">
+                                <rect key="frame" x="0.0" y="582" width="375" height="85"/>
+                                <color key="backgroundColor" red="1" green="0.67346540178571423" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="xJC-Mv-riT">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="140"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+                                <state key="normal" title="Ввести данные">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iS8-CR-Y8b" kind="show" id="Pmv-49-zkr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Проверьте штрафы в официальных источниках" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukU-E2-V5F" userLabel="Title label">
+                                <rect key="frame" x="49" y="70" width="277" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2vn-q2-qTu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="22"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QIa-YU-6VW" firstAttribute="leading" secondItem="k59-Wi-7Eh" secondAttribute="leading" priority="999" constant="25" id="4KN-ZG-pLq"/>
+                            <constraint firstItem="k59-Wi-7Eh" firstAttribute="trailing" secondItem="qLq-z0-bWX" secondAttribute="trailing" id="65B-eK-3ut"/>
+                            <constraint firstItem="gNB-IE-Ebr" firstAttribute="top" secondItem="k59-Wi-7Eh" secondAttribute="top" id="DHM-68-J7I"/>
+                            <constraint firstItem="gNB-IE-Ebr" firstAttribute="leading" secondItem="k59-Wi-7Eh" secondAttribute="leading" id="I5t-Oh-Wx9"/>
+                            <constraint firstItem="ukU-E2-V5F" firstAttribute="top" secondItem="k59-Wi-7Eh" secondAttribute="top" constant="50" id="Ko8-DP-BhN">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="qLq-z0-bWX" firstAttribute="bottom" secondItem="k59-Wi-7Eh" secondAttribute="bottom" id="PNb-2Z-4lj"/>
+                            <constraint firstItem="k59-Wi-7Eh" firstAttribute="trailing" secondItem="gNB-IE-Ebr" secondAttribute="trailing" id="Rzo-is-UBf"/>
+                            <constraint firstItem="QIa-YU-6VW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k59-Wi-7Eh" secondAttribute="leading" constant="25" id="UHg-rp-h2D"/>
+                            <constraint firstItem="qLq-z0-bWX" firstAttribute="top" secondItem="gNB-IE-Ebr" secondAttribute="bottom" id="amO-Xk-4en"/>
+                            <constraint firstItem="QIa-YU-6VW" firstAttribute="centerX" secondItem="k59-Wi-7Eh" secondAttribute="centerX" id="d3d-9c-ggU"/>
+                            <constraint firstItem="ukU-E2-V5F" firstAttribute="centerX" secondItem="k59-Wi-7Eh" secondAttribute="centerX" id="nQx-an-XUb"/>
+                            <constraint firstItem="ukU-E2-V5F" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k59-Wi-7Eh" secondAttribute="leading" constant="30" id="o8d-D7-SBG"/>
+                            <constraint firstItem="QIa-YU-6VW" firstAttribute="bottom" secondItem="qLq-z0-bWX" secondAttribute="top" id="pi6-QE-G3Y"/>
+                            <constraint firstItem="qLq-z0-bWX" firstAttribute="leading" secondItem="k59-Wi-7Eh" secondAttribute="leading" id="s3T-fi-p1g"/>
+                            <constraint firstItem="QIa-YU-6VW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ukU-E2-V5F" secondAttribute="bottom" constant="30" id="zDT-ff-gAu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k59-Wi-7Eh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3AC-tq-CNA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2S-li-GrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.399999999999999" y="15.742128935532236"/>
+        </scene>
+        <!--License Info Entering View Controller-->
+        <scene sceneID="Qgo-ds-srJ">
+            <objects>
+                <viewController id="iS8-CR-Y8b" customClass="LicenseInfoEnteringViewController" customModule="Fines" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bd3-1m-6h2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQd-tW-gtf" userLabel="License info textField">
+                                <rect key="frame" x="0.0" y="321" width="375" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="S69-FB-n7B"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fl0-ys-lDZ" userLabel="License example imageView">
+                                <rect key="frame" x="40" y="20" width="295" height="128.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fl0-ys-lDZ" secondAttribute="height" multiplier="147:64" id="4rq-nn-3dA"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="450" id="vpr-hV-i7a"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eQd-tW-gtf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fl0-ys-lDZ" secondAttribute="bottom" constant="20" id="3ob-RH-G2W"/>
+                            <constraint firstItem="fl0-ys-lDZ" firstAttribute="top" secondItem="EDn-ee-35S" secondAttribute="top" id="4EQ-az-3hJ"/>
+                            <constraint firstItem="EDn-ee-35S" firstAttribute="trailing" secondItem="eQd-tW-gtf" secondAttribute="trailing" id="Cj1-N5-7hu"/>
+                            <constraint firstItem="fl0-ys-lDZ" firstAttribute="leading" secondItem="EDn-ee-35S" secondAttribute="leading" priority="999" constant="40" id="M7w-Nx-Vez"/>
+                            <constraint firstItem="eQd-tW-gtf" firstAttribute="centerX" secondItem="EDn-ee-35S" secondAttribute="centerX" id="iWU-FX-1AF"/>
+                            <constraint firstItem="eQd-tW-gtf" firstAttribute="centerY" secondItem="EDn-ee-35S" secondAttribute="centerY" id="kX0-QZ-nMB"/>
+                            <constraint firstItem="eQd-tW-gtf" firstAttribute="leading" secondItem="EDn-ee-35S" secondAttribute="leading" id="w9E-7t-6hY"/>
+                            <constraint firstItem="fl0-ys-lDZ" firstAttribute="centerX" secondItem="EDn-ee-35S" secondAttribute="centerX" id="ys8-cK-LcL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EDn-ee-35S"/>
+                    </view>
+                    <connections>
+                        <outlet property="licenseExampleImageView" destination="fl0-ys-lDZ" id="CCx-3F-NAU"/>
+                        <outlet property="licenseInfoTextField" destination="eQd-tW-gtf" id="LZE-2z-bci"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qcm-vR-kTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874" y="20"/>
+        </scene>
+    </scenes>
 </document>
