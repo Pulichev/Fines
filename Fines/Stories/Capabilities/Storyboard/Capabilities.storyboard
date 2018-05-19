@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Page View Controller-->
+        <!--Capabilities Page View Controller-->
         <scene sceneID="PJi-Oa-SuD">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Wh2-90-0Cy" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="CapabilitiesPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Wh2-90-0Cy" customClass="CapabilitiesPageViewController" customModule="Fines" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXN-EQ-BEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-482" y="45"/>
@@ -27,13 +27,13 @@
         <!--Capability View Controller-->
         <scene sceneID="yBJ-tc-7vY">
             <objects>
-                <viewController id="uI8-BD-f1a" customClass="CapabilityViewController" customModule="Fines" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CapabilityViewController" id="uI8-BD-f1a" customClass="CapabilityViewController" customModule="Fines" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Og-iE-qjY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC0-wZ-9Oo" userLabel="Capability description label">
-                                <rect key="frame" x="161" y="70" width="54" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC0-wZ-9Oo" userLabel="Capability description label">
+                                <rect key="frame" x="133.5" y="70" width="108" height="26.5"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="22"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.96916900131290884" blue="0.95851660832586416" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="VC0-wZ-9Oo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nlp-iS-Khl" secondAttribute="leading" constant="30" id="3Sk-KS-Esu"/>
                             <constraint firstItem="qTY-tI-rb7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nlp-iS-Khl" secondAttribute="leading" constant="25" id="I1D-2L-4Qk"/>
@@ -77,16 +77,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zj3-da-e8x" userLabel="background image View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capabilities_background" translatesAutoresizingMaskIntoConstraints="NO" id="Zj3-da-e8x" userLabel="background image View">
                                 <rect key="frame" x="0.0" y="20" width="375" height="562"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-g4-8xQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-g4-8xQ" userLabel="next capability button">
                                 <rect key="frame" x="0.0" y="582" width="375" height="85"/>
+                                <color key="backgroundColor" red="0.57318003879293" green="0.81493934595639717" blue="0.92223931347150256" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="A5V-1f-fGu">
                                         <variation key="heightClass=regular-widthClass=regular" constant="140"/>
                                     </constraint>
                                 </constraints>
+                                <connections>
+                                    <action selector="nextCapabilityButtonTapped:" destination="tqv-pf-cXd" eventType="touchUpInside" id="RSE-Cv-sFJ"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5is-G6-J0u" userLabel="Page view controller container">
                                 <rect key="frame" x="0.0" y="20" width="375" height="562"/>
@@ -117,4 +121,7 @@
             <point key="canvasLocation" x="-1308" y="67.916041979010501"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="capabilities_background" width="1920" height="1200"/>
+    </resources>
 </document>

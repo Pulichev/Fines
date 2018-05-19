@@ -15,6 +15,10 @@ class CapabilitiesViewController: UIViewController {
     
     
   }
+  
+  @IBAction func nextCapabilityButtonTapped(_ sender: Any) {
+    
+  }
 }
 
 extension CapabilitiesViewController {
@@ -22,7 +26,7 @@ extension CapabilitiesViewController {
   static public func assembleFromStoryboard() -> CapabilitiesViewController {
     let storyboardId = "Capabilities"
     let viewControllerId = "CapabilitiesViewController"
-    let storyboard = UIStoryboard(name: "Capabilities", bundle: nil)
+    let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
     guard let vc = storyboard.instantiateViewController(withIdentifier: viewControllerId) as? CapabilitiesViewController else {
       fatalError("Could not load view controller from storyboard file: \(storyboardId)")
     }

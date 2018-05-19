@@ -8,10 +8,14 @@
 
 import Foundation
 
+// MARK: - LicenseInfoEnteringView protocol
+
 protocol LicenseInfoEnteringView: class {
   
   func validationComplete(withResult isValid: Bool)
 }
+
+// MARK: - LicenseInfoEnteringPresenter protocol
 
 protocol LicenseInfoEnteringPresenter: class {
   
@@ -22,6 +26,8 @@ protocol LicenseInfoEnteringPresenter: class {
   
   func navigateToNextStep()
 }
+
+// MARK: - LicenseInfoEnteringPresenter protocol implementation
 
 class LicenseInfoEnteringPresenterDefault: LicenseInfoEnteringPresenter {
   
@@ -36,13 +42,13 @@ class LicenseInfoEnteringPresenterDefault: LicenseInfoEnteringPresenter {
   }
   
   func validate(enteredInfo text: String) {
+    let isValid: Bool
     if licenseType == .plate {
-      let isValid = LicensePlateValidator.validate(licensePlate: text)
-      licenseInfoEnteringView?.validationComplete(withResult: isValid)
+      isValid = LicensePlateValidator.validate(licensePlate: text)
     } else {
-      let isValid = DriverLicenseValidator.validate(licenseNumber: text)
-      licenseInfoEnteringView?.validationComplete(withResult: isValid)
+      isValid = DriverLicenseValidator.validate(licenseNumber: text)
     }
+    licenseInfoEnteringView?.validationComplete(withResult: isValid)
   }
   
   func navigateToNextStep() {
