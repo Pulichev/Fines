@@ -29,11 +29,15 @@ class LicenseInfoEnteringViewController: UIViewController {
   @IBOutlet private var licenseInfoLabel: UILabel!
   @IBOutlet private var licenseInfoTextField: UITextField!
   
+  @IBOutlet private var rightBarButton: UIBarButtonItem!
   // MARK: Life cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    navigationController?.isNavigationBarHidden = true
+    
+    setupUI()
     licenseInfoEnteringPresenter?.viewDidLoad(withType: licenseType)
   }
   
@@ -42,20 +46,20 @@ class LicenseInfoEnteringViewController: UIViewController {
   private func setupUI() {
     switch licenseType {
     case .plate:
-      let vehiclePlateImage = UIImage(named: Assets.onboardingVehiclePlate.rawValue)
-      licenseExampleImageView.image = vehiclePlateImage
+      let image = UIImage(named: Assets.onboardingVehiclePlate.rawValue)
+      licenseExampleImageView.image = image
       licenseInfoLabel.text = "Укажите регистрационный номер ТС"
       licenseInfoTextField.placeholder = "A111AA 77"
       break
     case .vehicleRegistration:
-      let vehiclePlateImage = UIImage(named: Assets.onboardingVehicleRegistration.rawValue)
-      licenseExampleImageView.image = vehiclePlateImage
+      let image = UIImage(named: Assets.onboardingVehicleRegistration.rawValue)
+      licenseExampleImageView.image = image
       licenseInfoLabel.text = "Укажите номер свидетельства о регистрации ТС"
       licenseInfoTextField.placeholder = "77 АА 101010"
       break
     case .driverRegistration:
-      let vehiclePlateImage = UIImage(named: Assets.onboardingDriverRegistration.rawValue)
-      licenseExampleImageView.image = vehiclePlateImage
+      let image = UIImage(named: Assets.onboardingDriverRegistration.rawValue)
+      licenseExampleImageView.image = image
       licenseInfoLabel.text = "Укажите номер водительского удостоверения"
       licenseInfoTextField.placeholder = "77 AA 101010"
       break
@@ -64,7 +68,12 @@ class LicenseInfoEnteringViewController: UIViewController {
   
   @IBAction func licenseInfoTextFieldTextChanged(_ sender: UITextField) {
     let enteredText = sender.text ?? ""
+    rightBarButton.title = enteredText == "" ? "Пропустить" : "Далее"
     licenseInfoEnteringPresenter?.validate(enteredInfo: enteredText)
+  }
+  
+  @IBAction func rightBarButtonItemTapped(_ sender: UIBarButtonItem) {
+    licenseInfoEnteringPresenter?.navigateToNextLicenseInfoEnteringType()
   }
 }
 
@@ -73,6 +82,10 @@ class LicenseInfoEnteringViewController: UIViewController {
 extension LicenseInfoEnteringViewController: LicenseInfoEnteringView {
   
   func validationComplete(withResult isValid: Bool) {
-    print(isValid)
+    if isValid {
+      rightBarButton.isEnabled = true
+    } else {
+      rightBarButton.isEnabled = false
+    }
   }
 }

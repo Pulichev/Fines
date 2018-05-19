@@ -20,7 +20,7 @@ protocol LicenseInfoEnteringPresenter: class {
   func viewDidLoad(withType type: LicenseType)
   func validate(enteredInfo text: String)
   
-  func navigateToLicenseInfoEntering(licenseType type: LicenseType)
+  func navigateToNextLicenseInfoEnteringType()
 }
 
 class LicenseInfoEnteringPresenterDefault: LicenseInfoEnteringPresenter {
@@ -45,7 +45,9 @@ class LicenseInfoEnteringPresenterDefault: LicenseInfoEnteringPresenter {
     }
   }
   
-  func navigateToLicenseInfoEntering(licenseType type: LicenseType) {
-    router?.navigateToLicenseInfoEntering(licenseType: type)
+  func navigateToNextLicenseInfoEnteringType() {
+    // check current type for getting next
+    let nextLicenseType: LicenseType = licenseType == .plate ? .vehicleRegistration : .driverRegistration
+    router?.navigateToLicenseInfoEntering(licenseType: nextLicenseType)
   }
 }

@@ -25,7 +25,7 @@ class RouterDefault: Router {
   }
   
   func navigateToLicenseInfoEntering(licenseType type: LicenseType) {
-    let vc = LicenseInfoEnteringViewController()
+    let vc = LicenseInfoEnteringViewController.assembleFromStoryboard()
     vc.licenseType = type
     
     navigationController?.pushViewController(vc, animated: true)

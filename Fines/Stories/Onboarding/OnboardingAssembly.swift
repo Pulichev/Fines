@@ -9,6 +9,19 @@
 import Swinject
 import SwinjectStoryboard
 
+extension LicenseInfoEnteringViewController {
+  
+  static public func assembleFromStoryboard() -> LicenseInfoEnteringViewController {
+    let storyboardId = "Onboarding"
+    let viewControllerId = "LicenseInfoEnteringViewController"
+    let storyboard = SwinjectStoryboard.create(name: storyboardId, bundle: nil)
+    guard let vc = storyboard.instantiateViewController(withIdentifier: viewControllerId) as? LicenseInfoEnteringViewController else {
+      fatalError("Could not load view controller from storyboard file: \(storyboardId)")
+    }
+    return vc
+  }
+}
+
 class OnboardingAssembly: Assembly {
   
   func assemble(container: Container) {
