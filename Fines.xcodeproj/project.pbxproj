@@ -32,6 +32,10 @@
 		9FF6313C20B05C6A00B2444E /* CapabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6313B20B05C6A00B2444E /* CapabilityViewController.swift */; };
 		9FF6313E20B092FE00B2444E /* CapabilitiesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6313D20B092FE00B2444E /* CapabilitiesInfo.swift */; };
 		9FF6314020B0A1D200B2444E /* CapabilitiesViewController+PageDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6313F20B0A1D200B2444E /* CapabilitiesViewController+PageDelegates.swift */; };
+		9FF6314620B0B75A00B2444E /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF6314520B0B75A00B2444E /* HomePage.storyboard */; };
+		9FF6314820B0B78A00B2444E /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6314720B0B78A00B2444E /* HomePageViewController.swift */; };
+		9FF6314A20B0B7AA00B2444E /* HomePagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6314920B0B7AA00B2444E /* HomePagePresenter.swift */; };
+		9FF6314D20B0BA6600B2444E /* HomePageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6314C20B0BA6600B2444E /* HomePageAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,10 @@
 		9FF6313B20B05C6A00B2444E /* CapabilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapabilityViewController.swift; sourceTree = "<group>"; };
 		9FF6313D20B092FE00B2444E /* CapabilitiesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapabilitiesInfo.swift; sourceTree = "<group>"; };
 		9FF6313F20B0A1D200B2444E /* CapabilitiesViewController+PageDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CapabilitiesViewController+PageDelegates.swift"; sourceTree = "<group>"; };
+		9FF6314520B0B75A00B2444E /* HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
+		9FF6314720B0B78A00B2444E /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		9FF6314920B0B7AA00B2444E /* HomePagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePagePresenter.swift; sourceTree = "<group>"; };
+		9FF6314C20B0BA6600B2444E /* HomePageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageAssembly.swift; sourceTree = "<group>"; };
 		B05735E6C6D22D608B6C071D /* Pods-Fines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fines/Pods-Fines.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF4A459ED90EC9C4C7013C8 /* Pods_Fines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -167,6 +175,7 @@
 		9F7F675120AEAF230045BBD4 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				9FF6314120B0B70900B2444E /* HomePage */,
 				9F7F675820AEB0540045BBD4 /* Capabilities */,
 				9F7F675420AEAFF30045BBD4 /* Onboarding */,
 			);
@@ -273,6 +282,41 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		9FF6314120B0B70900B2444E /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				9FF6314220B0B72100B2444E /* Storyboard */,
+				9FF6314320B0B72A00B2444E /* Logic */,
+				9FF6314420B0B73400B2444E /* View */,
+				9FF6314C20B0BA6600B2444E /* HomePageAssembly.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		9FF6314220B0B72100B2444E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9FF6314520B0B75A00B2444E /* HomePage.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		9FF6314320B0B72A00B2444E /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				9FF6314920B0B7AA00B2444E /* HomePagePresenter.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		9FF6314420B0B73400B2444E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9FF6314720B0B78A00B2444E /* HomePageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,6 +381,7 @@
 				9F7F678920AF587A0045BBD4 /* SF-Pro-Text-Semibold.otf in Resources */,
 				9F7F673E20AE1EBC0045BBD4 /* LaunchScreen.storyboard in Resources */,
 				9F7F678B20AF587A0045BBD4 /* SF-Pro-Text-Light.otf in Resources */,
+				9FF6314620B0B75A00B2444E /* HomePage.storyboard in Resources */,
 				9F7F675D20AEB1010045BBD4 /* Capabilities.storyboard in Resources */,
 				9F7F673B20AE1EBC0045BBD4 /* Assets.xcassets in Resources */,
 				9F7F675320AEAFEF0045BBD4 /* Onboarding.storyboard in Resources */,
@@ -413,16 +458,19 @@
 				9F7F674920AE23690045BBD4 /* LicensePlateValidator.swift in Sources */,
 				9FB0346420B01D7C0019BD79 /* Assets.swift in Sources */,
 				9FB0346120B00F710019BD79 /* ServicesAssembly.swift in Sources */,
+				9FF6314820B0B78A00B2444E /* HomePageViewController.swift in Sources */,
 				9F7F674D20AE291E0045BBD4 /* String.swift in Sources */,
 				9F7F678E20AF631E0045BBD4 /* LicenseInfoEnteringPresenter.swift in Sources */,
 				9F7F674F20AE34970045BBD4 /* DriverLicenseValidator.swift in Sources */,
 				9FF6313820B04E1400B2444E /* LicenseEnteringVCUIInfo.swift in Sources */,
+				9FF6314A20B0B7AA00B2444E /* HomePagePresenter.swift in Sources */,
 				9F7F678320AF55930045BBD4 /* LicenseInfoEnteringViewController.swift in Sources */,
 				9FF6314020B0A1D200B2444E /* CapabilitiesViewController+PageDelegates.swift in Sources */,
 				9F7F676020AEB17B0045BBD4 /* Router.swift in Sources */,
 				9FB0345F20B00EAF0019BD79 /* OnboardingAssembly.swift in Sources */,
 				9FF6313E20B092FE00B2444E /* CapabilitiesInfo.swift in Sources */,
 				9FF6313A20B0521E00B2444E /* CapabilitiesViewController.swift in Sources */,
+				9FF6314D20B0BA6600B2444E /* HomePageAssembly.swift in Sources */,
 				9F7F673420AE1EBA0045BBD4 /* AppDelegate.swift in Sources */,
 				9FF6313C20B05C6A00B2444E /* CapabilityViewController.swift in Sources */,
 				9FB0345D20B00DDD0019BD79 /* SwinjectAssembler.swift in Sources */,

@@ -21,7 +21,7 @@ class LicenseInfoEnteringViewController: UIViewController {
   
   // MARK: Dependencies
   
-  public var licenseInfoEnteringPresenter: LicenseInfoEnteringPresenter?
+  var licenseInfoEnteringPresenter: LicenseInfoEnteringPresenter?
   
   // MARK: @IBOutlets
   
@@ -67,10 +67,10 @@ class LicenseInfoEnteringViewController: UIViewController {
 extension LicenseInfoEnteringViewController: LicenseInfoEnteringView {
   
   func validationComplete(withResult isValid: Bool) {
-    if isValid {
-      rightBarButton.isEnabled = true
-    } else {
-      rightBarButton.isEnabled = false
-    }
+//    if isValid {
+//      rightBarButton.isEnabled = true
+//    } else {
+//      rightBarButton.isEnabled = false
+//    }
   }
 }

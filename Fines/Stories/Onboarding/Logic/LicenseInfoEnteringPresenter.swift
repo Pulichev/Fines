@@ -19,6 +19,8 @@ protocol LicenseInfoEnteringView: class {
 
 protocol LicenseInfoEnteringPresenter: class {
   
+  var router: Router? { set get }
+  
   var licenseInfoEnteringView: LicenseInfoEnteringView? { set get }
   
   func viewDidLoad(withType type: LicenseType)

@@ -72,6 +72,10 @@ class CapabilitiesViewController: UIViewController {
   @IBAction func nextCapabilityButtonTapped(_ sender: Any) {
     scrollPageToNextIfPossible()
   }
+  
+  @IBAction func goToFinesButtonTapped(_ sender: UIButton) {
+    
+  }
 }
 
 extension CapabilitiesViewController {
