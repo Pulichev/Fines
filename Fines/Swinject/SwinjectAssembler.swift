@@ -38,4 +38,10 @@ class SwinjectAssembler: NSObject {
     if let router = assembler.resolver.resolve(Router.self) {
     }
   }
+  
+  public func assembleStoryOnboarding() -> UIViewController {
+    let storyboard = SwinjectStoryboard.create(name: "Onboarding", bundle: nil)
+    
+    return storyboard.instantiateViewController(withIdentifier: "WelcomeViewController")
+  }
 }
