@@ -70,6 +70,7 @@ class LicenseInfoEnteringPresenterDefault: LicenseInfoEnteringPresenter {
     case .vehicleRegistration:
       router?.navigateToLicenseInfoEntering(licenseType: .driverRegistration)
     case .driverRegistration:
+      UserDefaults.standard.set(true, forKey: StoriesFinishedKeys.onboardingFinished.rawValue)
       router?.navigateToCapabilitiesPreview()
     }
   }

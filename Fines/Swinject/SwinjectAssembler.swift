@@ -10,6 +10,12 @@ import UIKit
 import Swinject
 import SwinjectStoryboard
 
+enum StoriesFinishedKeys: String {
+  
+  case capabilitiesPreviewFinished = "CapabilitiesPreviewFinished"
+  case onboardingFinished          = "OnboardingFinished"
+}
+
 class SwinjectAssembler {
   
   // MARK: Attributes
@@ -41,6 +47,28 @@ class SwinjectAssembler {
   }
   
   // MARK: Navigation functions
+  
+  /// Checking defaults to know which page would first
+  func assembleStartStory() -> UIViewController {
+    let userDefaults = UserDefaults.standard
+    var vc: UIViewController
+    
+    let capabilitiesPreviewFinished = userDefaults.bool(
+      forKey: StoriesFinishedKeys.capabilitiesPreviewFinished.rawValue)
+    if capabilitiesPreviewFinished {
+      vc = assembleStoryHomePage()
+    } else {
+      let onboardingFinished = userDefaults.bool(
+        forKey: StoriesFinishedKeys.onboardingFinished.rawValue)
+      if onboardingFinished {
+        vc = CapabilitiesViewController.assembleFromStoryboard()
+      } else {
+        vc = assembleStoryOnboarding()
+      }
+    }
+    
+    return vc
+  }
   
   func assembleStoryOnboarding() -> UIViewController {
     let storyboard = SwinjectStoryboard.create(name: "Onboarding", bundle: nil)

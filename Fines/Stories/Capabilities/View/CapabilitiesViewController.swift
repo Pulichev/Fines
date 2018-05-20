@@ -80,6 +80,8 @@ class CapabilitiesViewController: UIViewController {
   }
   
   @IBAction func goToFinesButtonTapped(_ sender: UIButton) {
+    UserDefaults.standard.set(true,
+                              forKey: StoriesFinishedKeys.capabilitiesPreviewFinished.rawValue)
     router?.navigateToHomePage()
   }
 }
