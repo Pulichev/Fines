@@ -15,9 +15,13 @@ class DriverLicenseValidator {
   }
   
   private static func isValid(_ license: String) -> Bool {
-    let regex = "[0-9]{2}[А-Я]{2}[0-9]{6}"
+    let regex = "\\d{2}\(driverLicenseSymbols){2}\\d{6}"
     
     return license.matches(regex)
   }
+  
+  /// Returns symbols, that can be on vehicle plates
+  private static var driverLicenseSymbols: String {
+    return "[АВЕКМНОРСТУХ]"
+  }
 }
-

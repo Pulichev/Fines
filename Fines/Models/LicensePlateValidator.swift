@@ -26,20 +26,25 @@ class LicensePlateValidator {
   // MARK: Validating functions for different vehicle
   
   private static func isUsualAutoPlate(_ plate: String) -> Bool {
-    let regex = "[А-Я]{1}[0-9]{3}[А-Я]{2}[0-9]{2,3}"
+    let regex = "\(plateSymbols){1}\\d{3}\(plateSymbols){2}(([0][1-9])|([1-9](\\d{1,2})))"
     
     return plate.matches(regex)
   }
   
   private static func isTaxiAutoPlate(_ plate: String) -> Bool {
-    let regex = "[А-Я]{2}[0-9]{3}[0-9]{2,3}"
+    let regex = "\(plateSymbols){2}\\d{3}(([0][1-9])|([1-9](\\d{1,2})))"
     
     return plate.matches(regex)
   }
   
   private static func isMotoPlate(_ plate: String) -> Bool {
-    let regex = "[0-9]{4}[А-Я]{2}[0-9]{2,3}"
+    let regex = "\\d{4}\(plateSymbols){2}(([0][1-9])|([1-9](\\d{1,2})))"
     
     return plate.matches(regex)
+  }
+  
+  /// Returns symbols, that can be on vehicle plates
+  private static var plateSymbols: String {
+    return "[АВЕКМНОРСТУХ]"
   }
 }
