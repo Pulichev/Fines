@@ -31,9 +31,9 @@ class HomePageInteractorDefault: HomePageInteractor {
   var databaseClient: DatabaseCore?
   
   func requestLicensesInfo() {
-    let vehiclePlates        = databaseClient?.selectAllVehiclePlates() ?? []
+    let vehiclePlates        = databaseClient?.selectAllVehiclePlates()        ?? []
     let vehicleRegistrations = databaseClient?.selectAllVehicleRegistrations() ?? []
-    let driverRegistrations  = databaseClient?.selectAllDriverRegistrations() ?? []
+    let driverRegistrations  = databaseClient?.selectAllDriverRegistrations()  ?? []
     
     let homePageDataSource = HomePageDataSource(vehiclePlates:        vehiclePlates,
                                                 vehicleRegistrations: vehicleRegistrations,

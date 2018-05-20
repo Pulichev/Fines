@@ -57,8 +57,11 @@ class LicenseInfoEnteringViewController: UIViewController {
   
   @IBAction func licenseInfoTextFieldTextChanged(_ sender: UITextField) {
     let enteredText = sender.text ?? ""
+    let enteredTextCyrrilicTransliterated = enteredText.cyrrilicTransliterated
+    let enteredTextFormatted = enteredTextCyrrilicTransliterated?.uppercased() ?? ""
+    sender.text = enteredTextFormatted
     rightBarButton.title = enteredText == "" ? "Пропустить" : "Далее"
-    licenseInfoEnteringPresenter?.validate(enteredInfo: enteredText)
+    licenseInfoEnteringPresenter?.validate(enteredInfo: enteredTextFormatted)
   }
   
   @IBAction func rightBarButtonItemTapped(_ sender: UIBarButtonItem) {
