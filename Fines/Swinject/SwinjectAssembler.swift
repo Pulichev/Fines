@@ -34,6 +34,8 @@ class SwinjectAssembler {
   
   func setupAppRouter(window: UIWindow, navigationController: UINavigationController) {
     let router = assembler.resolver.resolve(Router.self) as! RouterDefault
+    navigationController.navigationBar.tintColor = .white
+    navigationController.navigationBar.barTintColor = #colorLiteral(red: 0.1451, green: 0.3451, blue: 0.5686, alpha: 1) /* #255891 */
     router.window = window
     router.navigationController = navigationController
   }

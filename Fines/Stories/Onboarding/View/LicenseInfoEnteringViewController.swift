@@ -35,8 +35,6 @@ class LicenseInfoEnteringViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    navigationController?.isNavigationBarHidden = true
-    
     setupUI()
     
     licenseInfoEnteringPresenter?.viewDidLoad(withType: licenseType)
@@ -51,6 +49,8 @@ class LicenseInfoEnteringViewController: UIViewController {
     licenseInfoTextField.placeholder = interfaceInfo.textFieldPlaceholderText
     
     licenseInfoTextField.delegate = self
+    
+    navigationController?.isNavigationBarHidden = false
   }
   
   // MARK: @IBActions
@@ -76,7 +76,8 @@ class LicenseInfoEnteringViewController: UIViewController {
 extension LicenseInfoEnteringViewController: LicenseInfoEnteringView {
   
   func validationComplete(withResult isValid: Bool) {
-    if isValid {
+    let licenseInfoText = licenseInfoTextField.text ?? ""
+    if isValid || licenseInfoText == "" { // isValid or empty = skip
       rightBarButton.isEnabled = true
     } else {
       rightBarButton.isEnabled = false

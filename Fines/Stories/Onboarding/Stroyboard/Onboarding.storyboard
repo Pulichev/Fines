@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="46w-zr-bai">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="kXk-2P-kKk">
             <objects>
-                <viewController storyboardIdentifier="WelcomeViewController" id="46w-zr-bai" userLabel="Welcome View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="46w-zr-bai" userLabel="Welcome View Controller" customClass="WelcomeViewController" customModule="Fines" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R6H-Ec-iCz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,6 +82,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3AC-tq-CNA"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2S-li-GrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,7 +110,7 @@
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding_vehicle_plate" translatesAutoresizingMaskIntoConstraints="NO" id="fl0-ys-lDZ" userLabel="License example imageView">
-                                <rect key="frame" x="40" y="57" width="295" height="87.5"/>
+                                <rect key="frame" x="40" y="10" width="295" height="87.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fl0-ys-lDZ" secondAttribute="height" multiplier="586:174" id="4rq-nn-3dA"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="450" id="vpr-hV-i7a"/>
@@ -121,46 +122,36 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uig-FI-LRq">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="0.42608816964285712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="0.50989974353301881" green="0.74961933019632909" blue="0.96942216157913208" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <items>
-                                    <navigationItem id="6qE-Ap-fz0">
-                                        <barButtonItem key="rightBarButtonItem" title="Пропустить" id="bfg-Vd-Eud">
-                                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="rightBarButtonItemTapped:" destination="iS8-CR-Y8b" id="dlt-5H-wqN"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.97243361398963735" green="0.97243361398963735" blue="0.97243361398963735" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uyz-oc-6WC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fl0-ys-lDZ" secondAttribute="bottom" constant="20" id="3ob-RH-G2W"/>
                             <constraint firstItem="EDn-ee-35S" firstAttribute="trailing" secondItem="eQd-tW-gtf" secondAttribute="trailing" id="Cj1-N5-7hu"/>
                             <constraint firstItem="uyz-oc-6WC" firstAttribute="leading" secondItem="EDn-ee-35S" secondAttribute="leading" constant="20" id="Ed3-Im-YQ7"/>
                             <constraint firstItem="uyz-oc-6WC" firstAttribute="centerX" secondItem="EDn-ee-35S" secondAttribute="centerX" id="H3G-VF-ftK"/>
                             <constraint firstItem="fl0-ys-lDZ" firstAttribute="leading" secondItem="EDn-ee-35S" secondAttribute="leading" priority="999" constant="40" id="M7w-Nx-Vez"/>
-                            <constraint firstItem="fl0-ys-lDZ" firstAttribute="top" secondItem="uig-FI-LRq" secondAttribute="bottom" constant="-7" id="Sfc-FD-gDh"/>
-                            <constraint firstItem="uig-FI-LRq" firstAttribute="top" secondItem="EDn-ee-35S" secondAttribute="top" id="X8T-nn-OUi"/>
-                            <constraint firstItem="uig-FI-LRq" firstAttribute="trailing" secondItem="EDn-ee-35S" secondAttribute="trailing" id="aTf-VO-AT6"/>
                             <constraint firstItem="eQd-tW-gtf" firstAttribute="centerX" secondItem="EDn-ee-35S" secondAttribute="centerX" id="iWU-FX-1AF"/>
                             <constraint firstItem="eQd-tW-gtf" firstAttribute="top" secondItem="uyz-oc-6WC" secondAttribute="bottom" constant="10" id="iZa-US-nds"/>
                             <constraint firstItem="eQd-tW-gtf" firstAttribute="centerY" secondItem="EDn-ee-35S" secondAttribute="centerY" id="kX0-QZ-nMB"/>
-                            <constraint firstItem="uig-FI-LRq" firstAttribute="leading" secondItem="EDn-ee-35S" secondAttribute="leading" id="luj-6c-05g"/>
                             <constraint firstItem="eQd-tW-gtf" firstAttribute="leading" secondItem="EDn-ee-35S" secondAttribute="leading" id="w9E-7t-6hY"/>
+                            <constraint firstItem="fl0-ys-lDZ" firstAttribute="top" secondItem="EDn-ee-35S" secondAttribute="top" constant="-10" id="xat-ei-gKF"/>
                             <constraint firstItem="fl0-ys-lDZ" firstAttribute="centerX" secondItem="EDn-ee-35S" secondAttribute="centerX" id="ys8-cK-LcL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EDn-ee-35S"/>
                     </view>
+                    <navigationItem key="navigationItem" id="g83-oY-nAL">
+                        <barButtonItem key="rightBarButtonItem" title="Пропустить" id="wDT-sS-0A1">
+                            <connections>
+                                <action selector="rightBarButtonItemTapped:" destination="iS8-CR-Y8b" id="mgj-8g-R7o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="licenseExampleImageView" destination="fl0-ys-lDZ" id="CCx-3F-NAU"/>
                         <outlet property="licenseInfoLabel" destination="uyz-oc-6WC" id="mzo-7z-Do1"/>
                         <outlet property="licenseInfoTextField" destination="eQd-tW-gtf" id="LZE-2z-bci"/>
-                        <outlet property="rightBarButton" destination="bfg-Vd-Eud" id="AnY-1n-tOx"/>
+                        <outlet property="rightBarButton" destination="wDT-sS-0A1" id="8nJ-7r-PLq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcm-vR-kTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
