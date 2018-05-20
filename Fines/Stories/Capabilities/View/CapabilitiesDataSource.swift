@@ -12,6 +12,7 @@ struct CapabilitiesDataSource {
   
   let descriptions: [String]
   let imageNames:   [String]
+  let imagesAspectRatios: [CGFloat]
   
   init() {
     descriptions = [
@@ -34,6 +35,15 @@ struct CapabilitiesDataSource {
       Assets.capabilitiesBill.rawValue,
       Assets.capabilitiesRedeemed.rawValue,
       ""
+    ]
+    
+    imagesAspectRatios = [
+      isIpad ? CGFloat(1182.0 / 1578.0) : CGFloat(945.0 / 1721.0),
+      isIpad ? CGFloat(1186.0 / 1596.0) : CGFloat(1056.0 / 1870.0),
+      isIpad ? CGFloat(1187.0 / 1683.0) : CGFloat(1040.0 / 1890.0),
+      CGFloat(944.0 / 1465.0),
+      CGFloat(1033.0 / 1459.0),
+      0.0
     ]
   }
   

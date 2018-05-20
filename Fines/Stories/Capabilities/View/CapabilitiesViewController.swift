@@ -38,6 +38,7 @@ class CapabilitiesViewController: UIViewController {
     super.viewDidLoad()
     
     initPageViewController()
+    navigationController?.isNavigationBarHidden = true
   }
   
   private func initPageViewController() {

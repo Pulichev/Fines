@@ -49,6 +49,7 @@ class LicenseInfoEnteringViewController: UIViewController {
     licenseInfoTextField.placeholder = interfaceInfo.textFieldPlaceholderText
     
     licenseInfoTextField.delegate = self
+    licenseInfoTextField.becomeFirstResponder()
     
     navigationController?.isNavigationBarHidden = false
   }

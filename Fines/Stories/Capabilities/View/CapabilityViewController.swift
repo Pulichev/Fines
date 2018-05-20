@@ -15,17 +15,42 @@ class CapabilityViewController: UIViewController {
   var index = 0
   var capabilityDescription = ""
   var capabilityImageName = ""
+  var capabilityImageViewAspectRatio: CGFloat = 1.0
   
   // MARK: @IBOutlets
   
   @IBOutlet private var capabilityDescriptionLabel: UILabel!
   @IBOutlet private var capabilityImageView: UIImageView!
+  @IBOutlet private var capabilityImageViewHeightConstraint: NSLayoutConstraint!
+  
+  // for making text on center if no image
+  @IBOutlet private var capabilityDescriptionLabelCenterVerticalyConstraint: NSLayoutConstraint!
+  @IBOutlet private var capabilityDescriptionLabelBottomConstraint:          NSLayoutConstraint!
+  
+  // MARK: Life cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    setupUI()
+  }
+  
+  private func setupUI() {
     capabilityDescriptionLabel.text = capabilityDescription
-    capabilityImageView.image = UIImage(named: capabilityImageName)
+    
+    if capabilityImageName != "" {
+      capabilityImageView.image = UIImage(named: capabilityImageName)
+      changeHeightConstraintForCapabilityImageView()
+    } else {
+      capabilityDescriptionLabelCenterVerticalyConstraint.priority = UILayoutPriority(rawValue: 1000)
+      capabilityDescriptionLabelBottomConstraint.priority = UILayoutPriority(rawValue: 999)
+    }
+  }
+  
+  private func changeHeightConstraintForCapabilityImageView() {
+    let capabilityImageViewWidth = capabilityImageView.frame.width
+    let capabilityImageViewHeight = capabilityImageViewWidth / capabilityImageViewAspectRatio
+    capabilityImageViewHeightConstraint.constant = capabilityImageViewHeight
   }
 }
 

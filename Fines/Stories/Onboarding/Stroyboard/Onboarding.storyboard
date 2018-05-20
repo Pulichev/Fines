@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="46w-zr-bai">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,33 +25,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_background" translatesAutoresizingMaskIntoConstraints="NO" id="gNB-IE-Ebr" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="582"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_check_phone" translatesAutoresizingMaskIntoConstraints="NO" id="QIa-YU-6VW" userLabel="Preview Image View">
-                                <rect key="frame" x="60.5" y="140" width="253" height="442"/>
+                                <rect key="frame" x="25" y="140" width="325" height="457"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="QIa-YU-6VW" secondAttribute="height" multiplier="945:1651" id="Wwv-Yg-Pvs"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="450" id="Hod-Vd-yjG"/>
+                                    <constraint firstAttribute="height" constant="457" id="dNR-cx-gKR"/>
                                 </constraints>
                                 <variation key="heightClass=regular-widthClass=regular" image="common_check_pad"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLq-z0-bWX" userLabel="Enter info button">
-                                <rect key="frame" x="0.0" y="582" width="375" height="85"/>
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.67450980392156867" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="xJC-Mv-riT">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="140"/>
+                                    <constraint firstAttribute="height" constant="70" id="xJC-Mv-riT">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                 <state key="normal" title="Ввести данные">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="28"/>
+                                </variation>
                                 <connections>
                                     <segue destination="iS8-CR-Y8b" kind="show" id="Pmv-49-zkr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Проверьте штрафы в официальных источниках" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukU-E2-V5F" userLabel="Title label">
-                                <rect key="frame" x="30" y="50" width="316" height="60"/>
+                                <rect key="frame" x="30" y="50" width="315" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="2vn-q2-qTu"/>
                                 </constraints>
@@ -76,13 +80,16 @@
                             <constraint firstItem="QIa-YU-6VW" firstAttribute="centerX" secondItem="R6H-Ec-iCz" secondAttribute="centerX" id="d3d-9c-ggU"/>
                             <constraint firstItem="ukU-E2-V5F" firstAttribute="centerX" secondItem="R6H-Ec-iCz" secondAttribute="centerX" id="nQx-an-XUb"/>
                             <constraint firstItem="ukU-E2-V5F" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="R6H-Ec-iCz" secondAttribute="leading" constant="30" id="o8d-D7-SBG"/>
-                            <constraint firstItem="QIa-YU-6VW" firstAttribute="bottom" secondItem="qLq-z0-bWX" secondAttribute="top" id="pi6-QE-G3Y"/>
                             <constraint firstItem="qLq-z0-bWX" firstAttribute="leading" secondItem="R6H-Ec-iCz" secondAttribute="leading" id="s3T-fi-p1g"/>
-                            <constraint firstItem="QIa-YU-6VW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ukU-E2-V5F" secondAttribute="bottom" constant="30" id="zDT-ff-gAu"/>
+                            <constraint firstItem="QIa-YU-6VW" firstAttribute="top" secondItem="ukU-E2-V5F" secondAttribute="bottom" constant="30" id="zDT-ff-gAu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3AC-tq-CNA"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="previewImageView" destination="QIa-YU-6VW" id="hQ8-YJ-wTR"/>
+                        <outlet property="previewImageViewHeightConstraint" destination="dNR-cx-gKR" id="PXG-3N-rnI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2S-li-GrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

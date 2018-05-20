@@ -266,8 +266,8 @@
 		9F7F675E20AEB1630045BBD4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9FF6315020B158F600B2444E /* DatabaseClient.swift */,
 				9F7F675F20AEB17B0045BBD4 /* Router.swift */,
+				9FF6315020B158F600B2444E /* DatabaseClient.swift */,
 				9FB0346020B00F710019BD79 /* ServicesAssembly.swift */,
 			);
 			path = Services;
