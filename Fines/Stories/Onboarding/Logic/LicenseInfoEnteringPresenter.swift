@@ -28,7 +28,7 @@ protocol LicenseInfoEnteringPresenter: class {
   func validate(enteredInfo text: String)
   
   func saveInfoIfPossible(text: String)
-  func navigateToNextStep()
+  func navigateToNextStep(skippedCurrent: Bool)
 }
 
 // MARK: - LicenseInfoEnteringPresenter protocol implementation
@@ -62,11 +62,15 @@ class LicenseInfoEnteringPresenterDefault: LicenseInfoEnteringPresenter {
     licenseInfoEnteringInteractor?.saveLicense(text, withType: licenseType)
   }
   
-  func navigateToNextStep() {
+  func navigateToNextStep(skippedCurrent: Bool) {
     // check current type for getting next event
     switch licenseType {
     case .plate:
-      router?.navigateToLicenseInfoEntering(licenseType: .vehicleRegistration)
+      if skippedCurrent {
+        router?.navigateToLicenseInfoEntering(licenseType: .driverRegistration)
+      } else {
+        router?.navigateToLicenseInfoEntering(licenseType: .vehicleRegistration)
+      }
     case .vehicleRegistration:
       router?.navigateToLicenseInfoEntering(licenseType: .driverRegistration)
     case .driverRegistration:

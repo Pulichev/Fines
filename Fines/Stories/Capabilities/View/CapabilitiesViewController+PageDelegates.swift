@@ -12,14 +12,16 @@ import UIKit
 
 extension CapabilitiesViewController: UIPageViewControllerDelegate {
   
-  func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+  func pageViewController(_ pageViewController: UIPageViewController,
+                          willTransitionTo pendingViewControllers: [UIViewController]) {
     pageControllerIsAnimating = true
     if let pendingCapabilityViewController = pendingViewControllers.first as? CapabilityViewController {
       pendingIndex = pendingCapabilityViewController.index
     }
   }
   
-  func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+  func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool,
+                          previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
     if completed {
       currentIndex = pendingIndex
       pageControl.currentPage = currentIndex
@@ -53,7 +55,8 @@ extension CapabilitiesViewController: UIPageViewControllerDelegate {
 
 extension CapabilitiesViewController: UIPageViewControllerDataSource {
   
-  func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+  func pageViewController(_ pageViewController: UIPageViewController,
+                          viewControllerBefore viewController: UIViewController) -> UIViewController? {
     var index = (viewController as? CapabilityViewController)?.index ?? 0
     
     if index == 0 {
@@ -65,7 +68,8 @@ extension CapabilitiesViewController: UIPageViewControllerDataSource {
     return createPreviewViewController(atIndex: index)
   }
   
-  func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+  func pageViewController(_ pageViewController: UIPageViewController,
+                          viewControllerAfter viewController: UIViewController) -> UIViewController? {
     var index = (viewController as? CapabilityViewController)?.index ?? 0
     index += 1
     

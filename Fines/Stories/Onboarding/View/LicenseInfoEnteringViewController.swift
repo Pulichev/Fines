@@ -80,7 +80,7 @@ class LicenseInfoEnteringViewController: UIViewController {
       showWarningAlert()
     } else {
       licenseInfoEnteringPresenter?.saveInfoIfPossible(text: enteredText)
-      licenseInfoEnteringPresenter?.navigateToNextStep()
+      licenseInfoEnteringPresenter?.navigateToNextStep(skippedCurrent: false)
     }
   }
   
@@ -95,7 +95,7 @@ class LicenseInfoEnteringViewController: UIViewController {
     alert.addAction(UIAlertAction(title: "Пропустить",
                                   style: .default,
                                   handler: { [weak self] _ in
-                                    self?.licenseInfoEnteringPresenter?.navigateToNextStep()
+                                    self?.licenseInfoEnteringPresenter?.navigateToNextStep(skippedCurrent: true)
     }))
     
     present(alert, animated: true, completion: nil)
