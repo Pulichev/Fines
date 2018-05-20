@@ -43,6 +43,12 @@ class LicenseInfoEnteringViewController: UIViewController {
     licenseInfoEnteringPresenter?.viewDidLoad(withType: licenseType)
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    licenseInfoTextField.becomeFirstResponder()
+  }
+  
   // MARK: UI configure
   
   private func setupUI() {
@@ -53,7 +59,6 @@ class LicenseInfoEnteringViewController: UIViewController {
     alertText = interfaceInfo.alertText
     
     licenseInfoTextField.delegate = self
-    licenseInfoTextField.becomeFirstResponder()
     
     navigationController?.isNavigationBarHidden = false
   }
