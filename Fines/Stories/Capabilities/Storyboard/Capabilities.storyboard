@@ -33,9 +33,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qTY-tI-rb7" userLabel="Capability Image View">
-                                <rect key="frame" x="25" y="195" width="325" height="472"/>
+                                <rect key="frame" x="25" y="195" width="325" height="600"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="472" id="C9v-Ym-REX"/>
+                                    <constraint firstAttribute="height" priority="999" constant="600" id="C9v-Ym-REX"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -45,6 +45,7 @@
                             <constraint firstItem="VC0-wZ-9Oo" firstAttribute="top" secondItem="nlp-iS-Khl" secondAttribute="top" constant="50" id="Lap-RU-nwr">
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
+                            <constraint firstAttribute="bottom" secondItem="qTY-tI-rb7" secondAttribute="bottom" priority="998" id="c2a-RK-yfA"/>
                             <constraint firstItem="qTY-tI-rb7" firstAttribute="leading" secondItem="nlp-iS-Khl" secondAttribute="leading" constant="25" id="g8O-JF-9Ph"/>
                             <constraint firstItem="qTY-tI-rb7" firstAttribute="centerX" secondItem="nlp-iS-Khl" secondAttribute="centerX" id="ow4-jw-Qbj"/>
                             <constraint firstItem="VC0-wZ-9Oo" firstAttribute="centerY" secondItem="nlp-iS-Khl" secondAttribute="centerY" priority="999" id="q2U-06-peu"/>
@@ -58,6 +59,7 @@
                         <outlet property="capabilityDescriptionLabelBottomConstraint" destination="umJ-SJ-bis" id="FdH-Uu-UFQ"/>
                         <outlet property="capabilityDescriptionLabelCenterVerticalyConstraint" destination="q2U-06-peu" id="dsA-18-g0v"/>
                         <outlet property="capabilityImageView" destination="qTY-tI-rb7" id="cx6-16-tlB"/>
+                        <outlet property="capabilityImageViewBottomConstraint" destination="c2a-RK-yfA" id="KDp-sK-Rhw"/>
                         <outlet property="capabilityImageViewHeightConstraint" destination="C9v-Ym-REX" id="dxQ-mV-X6x"/>
                     </connections>
                 </viewController>

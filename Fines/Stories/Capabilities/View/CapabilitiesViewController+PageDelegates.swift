@@ -83,6 +83,7 @@ extension CapabilitiesViewController: UIPageViewControllerDataSource {
     
     vc.index = index
     vc.capabilityDescription = capabilitiesDataSource.descriptions[index]
+    vc.shouldShowFullImage   = capabilitiesDataSource.shouldShowFullImage[index]
     vc.capabilityImageName   = capabilitiesDataSource.imageNames[index]
     vc.capabilityImageViewAspectRatio = capabilitiesDataSource.imagesAspectRatios[index]
     

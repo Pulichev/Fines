@@ -15,6 +15,7 @@ class CapabilityViewController: UIViewController {
   var index = 0
   var capabilityDescription = ""
   var capabilityImageName = ""
+  var shouldShowFullImage = true
   var capabilityImageViewAspectRatio: CGFloat = 1.0
   
   // MARK: @IBOutlets
@@ -22,6 +23,7 @@ class CapabilityViewController: UIViewController {
   @IBOutlet private var capabilityDescriptionLabel: UILabel!
   @IBOutlet private var capabilityImageView: UIImageView!
   @IBOutlet private var capabilityImageViewHeightConstraint: NSLayoutConstraint!
+  @IBOutlet private var capabilityImageViewBottomConstraint: NSLayoutConstraint!
   
   // for making text on center if no image
   @IBOutlet private var capabilityDescriptionLabelCenterVerticalyConstraint: NSLayoutConstraint!
@@ -40,17 +42,23 @@ class CapabilityViewController: UIViewController {
     
     if capabilityImageName != "" {
       capabilityImageView.image = UIImage(named: capabilityImageName)
-      changeHeightConstraintForCapabilityImageView()
+      changeConstraintsForCapabilityImageView()
     } else {
       capabilityDescriptionLabelCenterVerticalyConstraint.priority = UILayoutPriority(rawValue: 1000)
       capabilityDescriptionLabelBottomConstraint.priority = UILayoutPriority(rawValue: 999)
     }
   }
   
-  private func changeHeightConstraintForCapabilityImageView() {
-    let capabilityImageViewWidth = capabilityImageView.frame.width
-    let capabilityImageViewHeight = capabilityImageViewWidth / capabilityImageViewAspectRatio
-    capabilityImageViewHeightConstraint.constant = capabilityImageViewHeight
+  private func changeConstraintsForCapabilityImageView() {
+    view.layoutIfNeeded()
+    if shouldShowFullImage {
+      capabilityImageViewHeightConstraint.priority = UILayoutPriority(rawValue: 998)
+      capabilityImageViewBottomConstraint.priority = UILayoutPriority(rawValue: 999)
+    } else {
+      let capabilityImageViewWidth = capabilityImageView.frame.width
+      let capabilityImageViewHeight = capabilityImageViewWidth / capabilityImageViewAspectRatio
+      capabilityImageViewHeightConstraint.constant = capabilityImageViewHeight
+    }
   }
 }
 

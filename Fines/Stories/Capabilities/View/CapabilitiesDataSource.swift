@@ -13,6 +13,7 @@ struct CapabilitiesDataSource {
   let descriptions: [String]
   let imageNames:   [String]
   let imagesAspectRatios: [CGFloat]
+  let shouldShowFullImage: [Bool]
   
   init() {
     descriptions = [
@@ -44,6 +45,15 @@ struct CapabilitiesDataSource {
       CGFloat(944.0 / 1465.0),
       CGFloat(1033.0 / 1459.0),
       0.0
+    ]
+    
+    shouldShowFullImage = [
+      false,
+      false,
+      false,
+      true,
+      true,
+      false
     ]
   }
   

@@ -30,6 +30,7 @@ class WelcomeViewController: UIViewController {
   private func customizePreviewImageView() {
     let isIpad = UI_USER_INTERFACE_IDIOM() == .pad
     let aspectRatio = isIpad ? CGFloat(1187.0 / 1478.0) : CGFloat(945.0 / 1651.0)
+    view.layoutIfNeeded()
     let previewImageViewWidth = previewImageView.frame.width
     previewImageViewHeightConstraint.constant = previewImageViewWidth / aspectRatio
   }
