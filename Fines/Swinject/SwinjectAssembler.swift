@@ -38,11 +38,6 @@ class SwinjectAssembler {
     router.navigationController = navigationController
   }
   
-//  func assembleRouterAndNavigateToOnboarding() {
-//    if let router = assembler.resolver.resolve(Router.self) {
-//    }
-//  }
-  
   // MARK: Navigation functions
   
   func assembleStoryOnboarding() -> UIViewController {

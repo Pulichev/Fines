@@ -14,9 +14,9 @@ protocol DatabaseCore: class {
   func insert(vehicleRegistration: String)
   func insert(driverRegistration: String)
   
-  func selectAllVehiclePlates() -> [String]?
-  func selectAllVehicleRegistrations() -> [String]?
-  func selectAllDriverRegistration() -> [String]?
+  func selectAllVehiclePlates() -> [String]
+  func selectAllVehicleRegistrations() -> [String]
+  func selectAllDriverRegistrations() -> [String]
 }
 
 class DatabaseClientDefault: DatabaseCore {
@@ -90,7 +90,7 @@ class DatabaseClientDefault: DatabaseCore {
   // MARK: Logic functions
   
   func insert(vehiclePlate: String) {
-    let stmt = try? db.prepare("INSERT INTO vehicleplates (plate) VALUES (\(vehiclePlate))")
+    let stmt = try? db.prepare("INSERT INTO vehicleplates (plate) VALUES (\"\(vehiclePlate)\")")
     do {
       _ = try stmt?.run()
     } catch let error {
@@ -99,7 +99,7 @@ class DatabaseClientDefault: DatabaseCore {
   }
   
   func insert(vehicleRegistration: String) {
-    let stmt = try? db.prepare("INSERT INTO vehicleregistrations (registration) VALUES (\(vehicleRegistration))")
+    let stmt = try? db.prepare("INSERT INTO vehicleregistrations (registration) VALUES (\"\(vehicleRegistration)\")")
     do {
       _ = try stmt?.run()
     } catch let error {
@@ -108,7 +108,7 @@ class DatabaseClientDefault: DatabaseCore {
   }
   
   func insert(driverRegistration: String) {
-    let stmt = try? db.prepare("INSERT INTO driverregistratios (registration) VALUES (\(driverRegistration))")
+    let stmt = try? db.prepare("INSERT INTO driverregistrations (registration) VALUES (\"\(driverRegistration)\")")
     do {
       _ = try stmt?.run()
     } catch let error {
@@ -116,15 +116,51 @@ class DatabaseClientDefault: DatabaseCore {
     }
   }
   
-  func selectAllVehiclePlates() -> [String]? {
-    return nil
+  func selectAllVehiclePlates() -> [String] {
+    var allVehicles = [String]()
+    let plate = Expression<String>("plate")
+    
+    do {
+      let allVehiclesData = try db.prepare(vehiclePlates)
+      allVehicles = allVehiclesData.map({ (row) -> String in
+        return row[plate]
+      })
+    } catch let error {
+      print(error.localizedDescription)
+    }
+    
+    return allVehicles
   }
   
-  func selectAllVehicleRegistrations() -> [String]? {
-    return nil
+  func selectAllVehicleRegistrations() -> [String] {
+    var allVehicleRegistrations = [String]()
+    let registration = Expression<String>("registration")
+    
+    do {
+      let allVehicleRegistrationData = try db.prepare(vehicleRegistrations)
+      allVehicleRegistrations = allVehicleRegistrationData.map({ (row) -> String in
+        return row[registration]
+      })
+    } catch let error {
+      print(error.localizedDescription)
+    }
+    
+    return allVehicleRegistrations
   }
   
-  func selectAllDriverRegistration() -> [String]? {
-    return nil
+  func selectAllDriverRegistrations() -> [String] {
+    var allDriverRegistrations = [String]()
+    let registration = Expression<String>("registration")
+    
+    do {
+      let allDriverRegistrationData = try db.prepare(driverRegistrations)
+      allDriverRegistrations = allDriverRegistrationData.map({ (row) -> String in
+        return row[registration]
+      })
+    } catch let error {
+      print(error.localizedDescription)
+    }
+    
+    return allDriverRegistrations
   }
 }

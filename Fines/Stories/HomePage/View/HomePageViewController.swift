@@ -8,7 +8,11 @@
 
 import UIKit
 
-class HomePageViewController: UIViewController {
+class HomePageViewController: UITableViewController {
+  
+  // MARK: Properties
+  
+  var tableViewDataSource: HomePageDataSource?
   
   // MARK: Dependencies
   
@@ -19,7 +23,13 @@ class HomePageViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    configureTableView()
     
+    homePagePresenter?.viewDidLoad()
+  }
+  
+  private func configureTableView() {
+    tableView.tableFooterView = UIView(frame: .zero)
   }
 }
 
@@ -27,5 +37,8 @@ class HomePageViewController: UIViewController {
 
 extension HomePageViewController: HomePageView {
   
-  
+  func updateTableView(withData dataSource: HomePageDataSource) {
+    tableViewDataSource = dataSource
+    tableView.reloadData()
+  }
 }

@@ -39,6 +39,8 @@
 		9FF6314F20B152EA00B2444E /* CapabilitiesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6314E20B152EA00B2444E /* CapabilitiesAssembly.swift */; };
 		9FF6315120B158F600B2444E /* DatabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6315020B158F600B2444E /* DatabaseClient.swift */; };
 		9FF6315A20B1694900B2444E /* LicenseInfoEnteringInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6315920B1694900B2444E /* LicenseInfoEnteringInteractor.swift */; };
+		9FF6315C20B175B300B2444E /* HomePageViewController+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6315B20B175B300B2444E /* HomePageViewController+Table.swift */; };
+		9FF6315E20B1779E00B2444E /* HomePageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6315D20B1779E00B2444E /* HomePageInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		9FF6314E20B152EA00B2444E /* CapabilitiesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapabilitiesAssembly.swift; sourceTree = "<group>"; };
 		9FF6315020B158F600B2444E /* DatabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseClient.swift; sourceTree = "<group>"; };
 		9FF6315920B1694900B2444E /* LicenseInfoEnteringInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseInfoEnteringInteractor.swift; sourceTree = "<group>"; };
+		9FF6315B20B175B300B2444E /* HomePageViewController+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomePageViewController+Table.swift"; sourceTree = "<group>"; };
+		9FF6315D20B1779E00B2444E /* HomePageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageInteractor.swift; sourceTree = "<group>"; };
 		B05735E6C6D22D608B6C071D /* Pods-Fines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fines/Pods-Fines.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF4A459ED90EC9C4C7013C8 /* Pods_Fines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -306,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				9FF6314920B0B7AA00B2444E /* HomePagePresenter.swift */,
+				9FF6315D20B1779E00B2444E /* HomePageInteractor.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				9FF6314720B0B78A00B2444E /* HomePageViewController.swift */,
+				9FF6315B20B175B300B2444E /* HomePageViewController+Table.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,8 +474,10 @@
 				9F7F678320AF55930045BBD4 /* LicenseInfoEnteringViewController.swift in Sources */,
 				9FF6314020B0A1D200B2444E /* CapabilitiesViewController+PageDelegates.swift in Sources */,
 				9FF6314F20B152EA00B2444E /* CapabilitiesAssembly.swift in Sources */,
+				9FF6315E20B1779E00B2444E /* HomePageInteractor.swift in Sources */,
 				9F7F676020AEB17B0045BBD4 /* Router.swift in Sources */,
 				9FB0345F20B00EAF0019BD79 /* OnboardingAssembly.swift in Sources */,
+				9FF6315C20B175B300B2444E /* HomePageViewController+Table.swift in Sources */,
 				9FF6315120B158F600B2444E /* DatabaseClient.swift in Sources */,
 				9FF6313E20B092FE00B2444E /* CapabilitiesDataSource.swift in Sources */,
 				9FF6313A20B0521E00B2444E /* CapabilitiesViewController.swift in Sources */,

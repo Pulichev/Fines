@@ -51,6 +51,8 @@ class LicenseInfoEnteringViewController: UIViewController {
     licenseInfoTextField.placeholder = interfaceInfo.textFieldPlaceholderText
   }
   
+  // MARK: @IBActions
+  
   @IBAction func licenseInfoTextFieldTextChanged(_ sender: UITextField) {
     let enteredText = sender.text ?? ""
     rightBarButton.title = enteredText == "" ? "Пропустить" : "Далее"
