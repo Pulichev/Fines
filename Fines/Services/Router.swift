@@ -14,6 +14,7 @@ protocol Router: class {
   
   func navigateToLicenseInfoEntering(licenseType type: LicenseType)
   func navigateToCapabilitiesPreview()
+  func navigateToHomePage()
 }
 
 class RouterDefault: Router {
@@ -34,6 +35,12 @@ class RouterDefault: Router {
   
   func navigateToCapabilitiesPreview() {
     let vc = CapabilitiesViewController.assembleFromStoryboard()
+    
+    navigationController?.pushViewController(vc, animated: true)
+  }
+  
+  func navigateToHomePage() {
+    let vc = SwinjectAssembler.shared.assembleStoryHomePage()
     
     navigationController?.pushViewController(vc, animated: true)
   }

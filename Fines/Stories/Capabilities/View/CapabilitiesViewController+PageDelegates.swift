@@ -32,7 +32,7 @@ extension CapabilitiesViewController: UIPageViewControllerDelegate {
     guard !pageControllerIsAnimating else { return }
     let nextIndex = currentIndex + 1
     
-    if nextIndex < capabilitiesInfoDataSource.count,
+    if nextIndex < capabilitiesDataSource.count,
       let previewViewController = createPreviewViewController(atIndex: nextIndex) {
       pageControllerIsAnimating = true
       pageController.setViewControllers([previewViewController],
@@ -75,15 +75,15 @@ extension CapabilitiesViewController: UIPageViewControllerDataSource {
   // MARK: - Create view controllers
   
   func createPreviewViewController(atIndex index: Int) -> CapabilityViewController? {
-    guard index >= 0 && index < capabilitiesInfoDataSource.count else {
+    guard index >= 0 && index < capabilitiesDataSource.count else {
       return nil
     }
     
     let vc = CapabilityViewController.assembleFromStoryboard()
     
     vc.index = index
-    vc.capabilityDescription = capabilitiesInfoDataSource.descriptions[index]
-    vc.capabilityImageName   = capabilitiesInfoDataSource.imageNames[index]
+    vc.capabilityDescription = capabilitiesDataSource.descriptions[index]
+    vc.capabilityImageName   = capabilitiesDataSource.imageNames[index]
     
     return vc
   }

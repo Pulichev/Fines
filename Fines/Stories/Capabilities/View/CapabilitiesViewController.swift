@@ -10,9 +10,12 @@ import UIKit
 
 class CapabilitiesViewController: UIViewController {
   
+  /// Using it exactly in view, cause we don't need to have presenter here
+  var router: Router?
+  
   // MARK: Properties
   
-  let capabilitiesInfoDataSource = CapabilitiesInfo()
+  let capabilitiesDataSource = CapabilitiesDataSource()
   var pageController: UIPageViewController!
   var currentIndex = 0 {
     didSet {
@@ -56,12 +59,12 @@ class CapabilitiesViewController: UIViewController {
     }
     
     // Configure pageControl
-    pageControl.numberOfPages = capabilitiesInfoDataSource.count
+    pageControl.numberOfPages = capabilitiesDataSource.count
     pageControl.currentPage = 0
   }
   
   func changeButtonsVisibilityIfNeeded() {
-    let isLastPage = currentIndex == capabilitiesInfoDataSource.count - 1
+    let isLastPage = currentIndex == capabilitiesDataSource.count - 1
     if isLastPage {
       view.bringSubview(toFront: goToFinesButton)
     } else {
@@ -74,7 +77,7 @@ class CapabilitiesViewController: UIViewController {
   }
   
   @IBAction func goToFinesButtonTapped(_ sender: UIButton) {
-    
+    router?.navigateToHomePage()
   }
 }
 

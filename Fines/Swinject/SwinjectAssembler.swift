@@ -10,10 +10,11 @@ import UIKit
 import Swinject
 import SwinjectStoryboard
 
-class SwinjectAssembler: NSObject {
+class SwinjectAssembler {
+  
   // MARK: Attributes
   private static let _shared = SwinjectAssembler()
-  public class var shared: SwinjectAssembler {
+  class var shared: SwinjectAssembler {
     // https://github.com/Swinject/Swinject/issues/218
     Container.loggingFunction = nil
     return _shared
@@ -25,24 +26,34 @@ class SwinjectAssembler: NSObject {
     
     // stories
     OnboardingAssembly(),
+    CapabilitiesAssembly(),
     HomePageAssembly()
     ], container: SwinjectStoryboard.defaultContainer)
   
-  // MARK: External Interface
-  public func setupAppRouter(window: UIWindow, navigationController: UINavigationController) {
+  // MARK: Setup
+  
+  func setupAppRouter(window: UIWindow, navigationController: UINavigationController) {
     let router = assembler.resolver.resolve(Router.self) as! RouterDefault
     router.window = window
     router.navigationController = navigationController
   }
   
-  public func assembleRouterAndNavigateToOnboarding() {
-    if let router = assembler.resolver.resolve(Router.self) {
-    }
-  }
+//  func assembleRouterAndNavigateToOnboarding() {
+//    if let router = assembler.resolver.resolve(Router.self) {
+//    }
+//  }
   
-  public func assembleStoryOnboarding() -> UIViewController {
+  // MARK: Navigation functions
+  
+  func assembleStoryOnboarding() -> UIViewController {
     let storyboard = SwinjectStoryboard.create(name: "Onboarding", bundle: nil)
     
     return storyboard.instantiateViewController(withIdentifier: "WelcomeViewController")
+  }
+  
+  func assembleStoryHomePage() -> UIViewController {
+    let storyboard = SwinjectStoryboard.create(name: "HomePage", bundle: nil)
+    
+    return storyboard.instantiateViewController(withIdentifier: "HomePageViewController")
   }
 }

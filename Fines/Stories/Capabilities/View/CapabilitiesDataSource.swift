@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct CapabilitiesInfo {
+struct CapabilitiesDataSource {
   
   let descriptions: [String]
   let imageNames:   [String]
@@ -23,12 +23,16 @@ struct CapabilitiesInfo {
       "Соблюдайте правила дорожного движения"
     ]
     
+    let isIpad = UI_USER_INTERFACE_IDIOM() == .pad
     imageNames = [
-      "",
-      "",
-      "",
-      "",
-      "",
+      isIpad ? Assets.capabilitiesPushPad.rawValue
+        : Assets.capabilitiesPushPhone.rawValue,
+      isIpad ? Assets.capabilitiesPayPad.rawValue
+        : Assets.capabilitiesPayPhone.rawValue,
+      isIpad ? Assets.capabilitiesDiscountPad.rawValue
+        : Assets.capabilitiesDiscountPhone.rawValue,
+      Assets.capabilitiesBill.rawValue,
+      Assets.capabilitiesRedeemed.rawValue,
       ""
     ]
   }

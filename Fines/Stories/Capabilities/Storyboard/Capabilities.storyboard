@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,31 +23,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC0-wZ-9Oo" userLabel="Capability description label">
-                                <rect key="frame" x="133.5" y="70" width="108" height="26.5"/>
-                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Описание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC0-wZ-9Oo" userLabel="Capability description label">
+                                <rect key="frame" x="126.5" y="70" width="122.5" height="30"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="25"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qTY-tI-rb7" userLabel="Capability Image View">
-                                <rect key="frame" x="25" y="261" width="325" height="406"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="qTY-tI-rb7" secondAttribute="height" multiplier="2:2.5" id="XsW-lp-Zla"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capabilities_bill" translatesAutoresizingMaskIntoConstraints="NO" id="qTY-tI-rb7" userLabel="Capability Image View">
+                                <rect key="frame" x="25" y="135" width="325" height="532"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96916900131290884" blue="0.95851660832586416" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="VC0-wZ-9Oo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nlp-iS-Khl" secondAttribute="leading" constant="30" id="3Sk-KS-Esu"/>
-                            <constraint firstItem="qTY-tI-rb7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nlp-iS-Khl" secondAttribute="leading" constant="25" id="I1D-2L-4Qk"/>
+                            <constraint firstItem="VC0-wZ-9Oo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nlp-iS-Khl" secondAttribute="leading" constant="45" id="3Sk-KS-Esu"/>
                             <constraint firstItem="VC0-wZ-9Oo" firstAttribute="top" secondItem="nlp-iS-Khl" secondAttribute="top" constant="50" id="Lap-RU-nwr">
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
-                            <constraint firstItem="qTY-tI-rb7" firstAttribute="leading" secondItem="nlp-iS-Khl" secondAttribute="leading" priority="999" constant="25" id="g8O-JF-9Ph"/>
+                            <constraint firstItem="qTY-tI-rb7" firstAttribute="leading" secondItem="nlp-iS-Khl" secondAttribute="leading" constant="25" id="g8O-JF-9Ph"/>
                             <constraint firstItem="nlp-iS-Khl" firstAttribute="bottom" secondItem="qTY-tI-rb7" secondAttribute="bottom" id="gyR-Ls-6VJ"/>
                             <constraint firstItem="qTY-tI-rb7" firstAttribute="centerX" secondItem="nlp-iS-Khl" secondAttribute="centerX" id="ow4-jw-Qbj"/>
                             <constraint firstItem="VC0-wZ-9Oo" firstAttribute="centerX" secondItem="nlp-iS-Khl" secondAttribute="centerX" id="rBb-th-goi"/>
-                            <constraint firstItem="qTY-tI-rb7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VC0-wZ-9Oo" secondAttribute="bottom" constant="30" id="umJ-SJ-bis"/>
+                            <constraint firstItem="qTY-tI-rb7" firstAttribute="top" secondItem="VC0-wZ-9Oo" secondAttribute="bottom" constant="35" id="umJ-SJ-bis"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nlp-iS-Khl"/>
                     </view>
@@ -69,7 +64,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wt_background" translatesAutoresizingMaskIntoConstraints="NO" id="Zj3-da-e8x" userLabel="background image View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_background" translatesAutoresizingMaskIntoConstraints="NO" id="Zj3-da-e8x" userLabel="background image View">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KK-ht-xKc" userLabel="Go to fines button">
@@ -99,7 +94,7 @@
                                         </constraints>
                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="imageEdgeInsets" minX="30" minY="26" maxX="30" maxY="26"/>
-                                        <state key="normal" image="wt_next_button"/>
+                                        <state key="normal" image="common_next_button"/>
                                         <connections>
                                             <action selector="nextCapabilityButtonTapped:" destination="tqv-pf-cXd" eventType="touchUpInside" id="RSE-Cv-sFJ"/>
                                         </connections>
@@ -156,7 +151,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="wt_background" width="1242" height="2208"/>
-        <image name="wt_next_button" width="21" height="15"/>
+        <image name="capabilities_bill" width="944" height="1465"/>
+        <image name="common_background" width="1242" height="2208"/>
+        <image name="common_next_button" width="21" height="15"/>
     </resources>
 </document>
