@@ -25,18 +25,30 @@ extension LicenseInfoEnteringViewController {
 class OnboardingAssembly: Assembly {
   
   func assemble(container: Container) {
+    registerInteractors(container: container)
     registerPresenters(container: container)
     registerViews(container: container)
+  }
+  
+  private func registerInteractors(container: Container) {
+    container.register(LicenseInfoEnteringInteractor.self) { r in
+      let interactor = LicenseInfoEnteringInteractorDefault()
+      let databaseClient = r.resolve(DatabaseCore.self)
+      interactor.databaseClient = databaseClient
+      return interactor
+    }
   }
   
   private func registerPresenters(container: Container) {
     container.register(LicenseInfoEnteringPresenter.self) { r in
       let presenter = LicenseInfoEnteringPresenterDefault()
+      let interactor = r.resolve(LicenseInfoEnteringInteractor.self)
       let router = r.resolve(Router.self)
       presenter.router = router
+      presenter.licenseInfoEnteringInteractor = interactor
       
       return presenter
-     }
+    }
   }
   
   private func registerViews(container: Container) {

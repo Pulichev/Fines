@@ -21,11 +21,13 @@ protocol LicenseInfoEnteringPresenter: class {
   
   var router: Router? { set get }
   
+  var licenseInfoEnteringInteractor: LicenseInfoEnteringInteractor? { set get }
   var licenseInfoEnteringView: LicenseInfoEnteringView? { set get }
   
   func viewDidLoad(withType type: LicenseType)
   func validate(enteredInfo text: String)
   
+  func saveInfoIfPossible(text: String)
   func navigateToNextStep()
 }
 
@@ -35,6 +37,7 @@ class LicenseInfoEnteringPresenterDefault: LicenseInfoEnteringPresenter {
   
   var router: Router?
   
+  var licenseInfoEnteringInteractor: LicenseInfoEnteringInteractor?
   weak var licenseInfoEnteringView: LicenseInfoEnteringView?
   
   var licenseType: LicenseType = .plate
@@ -51,6 +54,12 @@ class LicenseInfoEnteringPresenterDefault: LicenseInfoEnteringPresenter {
       isValid = DriverLicenseValidator.validate(licenseNumber: text)
     }
     licenseInfoEnteringView?.validationComplete(withResult: isValid)
+  }
+  
+  func saveInfoIfPossible(text: String) {
+    guard text != "" else { return } // skip tapped
+    
+    licenseInfoEnteringInteractor?.saveLicense(text, withType: licenseType)
   }
   
   func navigateToNextStep() {

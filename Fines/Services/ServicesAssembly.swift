@@ -17,5 +17,11 @@ class ServicesAssembly: Assembly {
       return router
       }
       .inObjectScope(.container)
+    
+    container.register(DatabaseCore.self) { r in
+      let databaseCore = DatabaseClientDefault()
+      return databaseCore
+    }
+    .inObjectScope(.container)
   }
 }

@@ -58,6 +58,8 @@ class LicenseInfoEnteringViewController: UIViewController {
   }
   
   @IBAction func rightBarButtonItemTapped(_ sender: UIBarButtonItem) {
+    let enteredText = licenseInfoTextField.text ?? ""
+    licenseInfoEnteringPresenter?.saveInfoIfPossible(text: enteredText)
     licenseInfoEnteringPresenter?.navigateToNextStep()
   }
 }
@@ -67,10 +69,10 @@ class LicenseInfoEnteringViewController: UIViewController {
 extension LicenseInfoEnteringViewController: LicenseInfoEnteringView {
   
   func validationComplete(withResult isValid: Bool) {
-//    if isValid {
-//      rightBarButton.isEnabled = true
-//    } else {
-//      rightBarButton.isEnabled = false
-//    }
+    if isValid {
+      rightBarButton.isEnabled = true
+    } else {
+      rightBarButton.isEnabled = false
+    }
   }
 }
