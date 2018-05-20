@@ -8,6 +8,10 @@
 
 class DriverLicenseValidator {
   
+  /// Validating current driver license of vehicle registration
+  ///
+  /// - Parameter licenseNumber: current text in text field
+  /// - Returns: true if valid, false if not
   static func validate(licenseNumber: String) -> Bool {
     let licenseUppercased = licenseNumber.uppercased()
     

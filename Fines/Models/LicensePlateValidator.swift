@@ -13,7 +13,6 @@ class LicensePlateValidator {
   /// - Parameter licensePlate: current text in text field
   /// - Returns: true if valid, false if not
   static func validate(licensePlate: String) -> Bool {
-    // TODO: translate items that on eng
     let uppercasedPlate = licensePlate.uppercased()
     
     let isValid = isUsualAutoPlate(uppercasedPlate)
