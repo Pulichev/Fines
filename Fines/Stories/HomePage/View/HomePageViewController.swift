@@ -8,28 +8,30 @@
 
 import UIKit
 
-class HomePageViewController: UITableViewController {
-  
-  // MARK: Properties
-  
-  var tableViewDataSource: HomePageDataSource?
+class HomePageViewController: UIViewController {
   
   // MARK: Dependencies
   
   var homePagePresenter: HomePagePresenter?
+  
+  // MARK: @IBOutlets
+  
+  @IBOutlet private var titleLabel: UILabel!
+  
+  var tableViewController: HomePageTableViewController!
   
   // MARK: Life cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    configureTableView()
-    
     homePagePresenter?.viewDidLoad()
   }
   
-  private func configureTableView() {
-    tableView.tableFooterView = UIView(frame: .zero)
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let tableVC = segue.destination as? HomePageTableViewController {
+      tableViewController = tableVC
+    }
   }
 }
 
@@ -38,7 +40,6 @@ class HomePageViewController: UITableViewController {
 extension HomePageViewController: HomePageView {
   
   func updateTableView(withData dataSource: HomePageDataSource) {
-    tableViewDataSource = dataSource
-    tableView.reloadData()
+    tableViewController.reloadTableView(withData: dataSource)
   }
 }

@@ -1,5 +1,5 @@
 //
-//  HomePageViewController+Table.swift
+//  HomePageTableViewController.swift
 //  Fines
 //
 //  Created by Владислав Пуличев on 20.05.2018.
@@ -23,9 +23,52 @@ struct HomePageDataSource {
   }
 }
 
+class HomePageTableViewController: UITableViewController {
+  
+  // MARK: Properties
+  
+  var tableViewDataSource: HomePageDataSource?
+  
+  // MARK: Life cycle
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    configureTableView()
+  }
+  
+  // MARK: TableView functions
+  
+  public func reloadTableView(withData dataSource: HomePageDataSource) {
+    tableViewDataSource = dataSource
+    tableView.reloadData()
+  }
+  
+  private func configureTableView() {
+    tableView.tableFooterView = UIView(frame: .zero)
+  }
+}
+
 // MARK: - UITableViewDelegate and UITableViewDataSource
 
-extension HomePageViewController {
+extension HomePageTableViewController {
+  
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return 3
+  }
+  
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    switch section {
+    case 0:
+      return "Номера"
+    case 1:
+      return "СТС"
+    case 2:
+      return "ВУ"
+    default:
+      return ""
+    }
+  }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     switch section {
@@ -42,22 +85,27 @@ extension HomePageViewController {
   
   override func tableView(_ tableView: UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = super.tableView(tableView, cellForRowAt: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: HomePageCell.identifier,
+                                             for: indexPath) as! HomePageCell
     let section = indexPath.section
     let row     = indexPath.row
+    let text: String
     switch section {
     case 0:
-      cell.textLabel?.text = tableViewDataSource?.vehiclePlates[row]
+      text = tableViewDataSource?.vehiclePlates[row] ?? ""
       break
     case 1:
-      cell.textLabel?.text = tableViewDataSource?.vehicleRegistrations[row]
+      text = tableViewDataSource?.vehicleRegistrations[row] ?? ""
       break
     case 2:
-      cell.textLabel?.text = tableViewDataSource?.driverRegistrations[row]
+      text = tableViewDataSource?.driverRegistrations[row] ?? ""
       break
     default:
+      text = ""
       break
     }
+    
+    cell.setupCell(with: text)
     
     return cell
   }

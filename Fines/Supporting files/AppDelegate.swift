@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func configureInitialUI() {
     let windowFrame = UIScreen.main.bounds
     window = UIWindow(frame: windowFrame)
-    let onboardingVC = SwinjectAssembler.shared.assembleStoryOnboarding()
+    let onboardingVC = SwinjectAssembler.shared.assembleStoryHomePage()//SwinjectAssembler.shared.assembleStoryOnboarding()
     let navigationController = UINavigationController(rootViewController: onboardingVC)
     navigationController.isNavigationBarHidden = true
     window!.rootViewController = navigationController
