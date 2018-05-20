@@ -40,11 +40,17 @@ class OnboardingAssembly: Assembly {
   }
   
   private func registerPresenters(container: Container) {
+    container.register(LicensesEnteredInfoValues.self) { _ in
+      LicensesEnteredInfoValues()
+      }.inObjectScope(.weak)
+    
     container.register(LicenseInfoEnteringPresenter.self) { r in
       let presenter = LicenseInfoEnteringPresenterDefault()
       let interactor = r.resolve(LicenseInfoEnteringInteractor.self)
+      let licensesEnteredInfoValues = r.resolve(LicensesEnteredInfoValues.self)
       let router = r.resolve(Router.self)
       presenter.router = router
+      presenter.licensesEnteredInfoValues = licensesEnteredInfoValues
       presenter.licenseInfoEnteringInteractor = interactor
       
       return presenter

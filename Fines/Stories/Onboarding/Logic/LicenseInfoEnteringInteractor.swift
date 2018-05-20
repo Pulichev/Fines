@@ -10,24 +10,24 @@ protocol LicenseInfoEnteringInteractor: class {
   
   var databaseClient: DatabaseCore? { set get }
   
-  func saveLicense(_ text: String, withType type: LicenseType)
+  func saveLicensesInfo(_ info: LicensesEnteredInfoValues?)
 }
 
 class LicenseInfoEnteringInteractorDefault: LicenseInfoEnteringInteractor {
   
   var databaseClient: DatabaseCore?
   
-  func saveLicense(_ text: String, withType type: LicenseType) {
-    switch type {
-    case .plate:
-      saveVehiclePlateToDb(text)
-      break
-    case .vehicleRegistration:
-      saveVehicleRegistrationToDb(text)
-      break
-    case .driverRegistration:
-      saveDriverRegistrationToDb(text)
-      break
+  func saveLicensesInfo(_ info: LicensesEnteredInfoValues?) {
+    guard let infoValues = info else { return }
+    
+    if infoValues.vehiclePlate != "" {
+      saveVehiclePlateToDb(infoValues.vehiclePlate)
+    }
+    if infoValues.vehicleRegistration != "" {
+      saveVehicleRegistrationToDb(infoValues.vehicleRegistration)
+    }
+    if infoValues.driverRegistration != "" {
+      saveDriverRegistrationToDb(infoValues.driverRegistration)
     }
   }
   

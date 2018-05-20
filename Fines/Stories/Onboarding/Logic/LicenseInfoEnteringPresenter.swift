@@ -20,6 +20,7 @@ protocol LicenseInfoEnteringView: class {
 protocol LicenseInfoEnteringPresenter: class {
   
   var router: Router? { set get }
+  var licensesEnteredInfoValues: LicensesEnteredInfoValues? { set get }
   
   var licenseInfoEnteringInteractor: LicenseInfoEnteringInteractor? { set get }
   var licenseInfoEnteringView: LicenseInfoEnteringView? { set get }
@@ -27,7 +28,7 @@ protocol LicenseInfoEnteringPresenter: class {
   func viewDidLoad(withType type: LicenseType)
   func validate(enteredInfo text: String)
   
-  func saveInfoIfPossible(text: String)
+  func saveInfo(text: String)
   func navigateToNextStep(skippedCurrent: Bool)
 }
 
@@ -36,6 +37,7 @@ protocol LicenseInfoEnteringPresenter: class {
 class LicenseInfoEnteringPresenterDefault: LicenseInfoEnteringPresenter {
   
   var router: Router?
+  var licensesEnteredInfoValues: LicensesEnteredInfoValues?
   
   var licenseInfoEnteringInteractor: LicenseInfoEnteringInteractor?
   weak var licenseInfoEnteringView: LicenseInfoEnteringView?
@@ -56,10 +58,15 @@ class LicenseInfoEnteringPresenterDefault: LicenseInfoEnteringPresenter {
     licenseInfoEnteringView?.validationComplete(withResult: isValid)
   }
   
-  func saveInfoIfPossible(text: String) {
-    guard text != "" else { return } // skip tapped
-    
-    licenseInfoEnteringInteractor?.saveLicense(text, withType: licenseType)
+  func saveInfo(text: String) {
+    switch licenseType {
+    case .plate:
+      licensesEnteredInfoValues?.vehiclePlate = text
+    case .vehicleRegistration:
+      licensesEnteredInfoValues?.vehicleRegistration = text
+    case .driverRegistration:
+      licensesEnteredInfoValues?.driverRegistration = text
+    }
   }
   
   func navigateToNextStep(skippedCurrent: Bool) {
@@ -75,6 +82,7 @@ class LicenseInfoEnteringPresenterDefault: LicenseInfoEnteringPresenter {
       router?.navigateToLicenseInfoEntering(licenseType: .driverRegistration)
     case .driverRegistration:
       UserDefaults.standard.set(true, forKey: StoriesFinishedKeys.onboardingFinished.rawValue)
+      licenseInfoEnteringInteractor?.saveLicensesInfo(licensesEnteredInfoValues)
       router?.navigateToCapabilitiesPreview()
     }
   }

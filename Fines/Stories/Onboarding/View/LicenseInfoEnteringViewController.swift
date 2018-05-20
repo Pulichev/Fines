@@ -79,7 +79,7 @@ class LicenseInfoEnteringViewController: UIViewController {
     if enteredText == "" {
       showWarningAlert()
     } else {
-      licenseInfoEnteringPresenter?.saveInfoIfPossible(text: enteredText)
+      licenseInfoEnteringPresenter?.saveInfo(text: enteredText)
       licenseInfoEnteringPresenter?.navigateToNextStep(skippedCurrent: false)
     }
   }
