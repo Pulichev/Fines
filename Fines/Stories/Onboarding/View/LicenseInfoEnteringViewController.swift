@@ -49,6 +49,8 @@ class LicenseInfoEnteringViewController: UIViewController {
     licenseExampleImageView.image = UIImage(named: interfaceInfo.imageName)
     licenseInfoLabel.text = interfaceInfo.labelText
     licenseInfoTextField.placeholder = interfaceInfo.textFieldPlaceholderText
+    
+    licenseInfoTextField.delegate = self
   }
   
   // MARK: @IBActions
@@ -76,5 +78,19 @@ extension LicenseInfoEnteringViewController: LicenseInfoEnteringView {
     } else {
       rightBarButton.isEnabled = false
     }
+  }
+}
+
+// MARK: - UITextField delegate
+
+extension LicenseInfoEnteringViewController: UITextFieldDelegate {
+  
+  // Restrict max length
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                 replacementString string: String) -> Bool {
+    guard let text = textField.text else { return true }
+    let limitLength = licenseType == .plate ? 9 : 10
+    let newLength = text.count + string.count - range.length
+    return newLength <= limitLength
   }
 }
