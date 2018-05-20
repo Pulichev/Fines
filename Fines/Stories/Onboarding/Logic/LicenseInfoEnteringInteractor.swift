@@ -6,12 +6,25 @@
 //  Copyright © 2018 Владислав Пуличев. All rights reserved.
 //
 
+/// Using this for storing values from steps to save them to db
+/// Injected in swinject
+class LicensesEnteredInfoValues {
+  
+  var vehiclePlate        = ""
+  var vehicleRegistration = ""
+  var driverRegistration  = ""
+}
+
+// MARK: - LicenseInfoEnteringInteractor protocol
+
 protocol LicenseInfoEnteringInteractor: class {
   
   var databaseClient: DatabaseCore? { set get }
   
   func saveLicensesInfo(_ info: LicensesEnteredInfoValues?)
 }
+
+// MARK: - LicenseInfoEnteringInteractor implementation
 
 class LicenseInfoEnteringInteractorDefault: LicenseInfoEnteringInteractor {
   

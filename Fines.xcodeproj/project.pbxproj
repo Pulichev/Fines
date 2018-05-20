@@ -28,7 +28,6 @@
 		9FB0346120B00F710019BD79 /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0346020B00F710019BD79 /* ServicesAssembly.swift */; };
 		9FB0346420B01D7C0019BD79 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0346320B01D7C0019BD79 /* Assets.swift */; };
 		9FB2A03F20B1BF3300AAD3C6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A03E20B1BF3300AAD3C6 /* WelcomeViewController.swift */; };
-		9FB2A04220B1EC2900AAD3C6 /* LicensesEnteredInfoValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A04120B1EC2900AAD3C6 /* LicensesEnteredInfoValues.swift */; };
 		9FF6313820B04E1400B2444E /* LicenseEnteringVCUIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6313720B04E1400B2444E /* LicenseEnteringVCUIInfo.swift */; };
 		9FF6313A20B0521E00B2444E /* CapabilitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6313920B0521E00B2444E /* CapabilitiesViewController.swift */; };
 		9FF6313C20B05C6A00B2444E /* CapabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6313B20B05C6A00B2444E /* CapabilityViewController.swift */; };
@@ -70,7 +69,6 @@
 		9FB0346020B00F710019BD79 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
 		9FB0346320B01D7C0019BD79 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		9FB2A03E20B1BF3300AAD3C6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		9FB2A04120B1EC2900AAD3C6 /* LicensesEnteredInfoValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesEnteredInfoValues.swift; sourceTree = "<group>"; };
 		9FF6313720B04E1400B2444E /* LicenseEnteringVCUIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseEnteringVCUIInfo.swift; sourceTree = "<group>"; };
 		9FF6313920B0521E00B2444E /* CapabilitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapabilitiesViewController.swift; sourceTree = "<group>"; };
 		9FF6313B20B05C6A00B2444E /* CapabilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapabilityViewController.swift; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 			children = (
 				9F7F678D20AF631E0045BBD4 /* LicenseInfoEnteringPresenter.swift */,
 				9FF6315920B1694900B2444E /* LicenseInfoEnteringInteractor.swift */,
-				9FB2A04120B1EC2900AAD3C6 /* LicensesEnteredInfoValues.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -489,7 +486,6 @@
 				9F7F674F20AE34970045BBD4 /* DriverLicenseValidator.swift in Sources */,
 				9FF6313820B04E1400B2444E /* LicenseEnteringVCUIInfo.swift in Sources */,
 				9FF6314A20B0B7AA00B2444E /* HomePagePresenter.swift in Sources */,
-				9FB2A04220B1EC2900AAD3C6 /* LicensesEnteredInfoValues.swift in Sources */,
 				9F7F678320AF55930045BBD4 /* LicenseInfoEnteringViewController.swift in Sources */,
 				9FF6314020B0A1D200B2444E /* CapabilitiesViewController+PageDelegates.swift in Sources */,
 				9FF6316020B1998100B2444E /* HomePageTableViewController.swift in Sources */,
