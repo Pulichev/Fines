@@ -17,11 +17,14 @@ enum LicenseType {
 
 class LicenseInfoEnteringViewController: UIViewController {
   
-  var licenseType: LicenseType = .plate // default
-  
   // MARK: Dependencies
   
   var licenseInfoEnteringPresenter: LicenseInfoEnteringPresenter?
+  
+  // MARK: Properties
+  
+  var licenseType: LicenseType = .plate // default
+  private var alertText = ""
   
   // MARK: @IBOutlets
   
@@ -47,6 +50,7 @@ class LicenseInfoEnteringViewController: UIViewController {
     licenseExampleImageView.image = UIImage(named: interfaceInfo.imageName)
     licenseInfoLabel.text = interfaceInfo.labelText
     licenseInfoTextField.placeholder = interfaceInfo.textFieldPlaceholderText
+    alertText = interfaceInfo.alertText
     
     licenseInfoTextField.delegate = self
     licenseInfoTextField.becomeFirstResponder()
@@ -67,8 +71,29 @@ class LicenseInfoEnteringViewController: UIViewController {
   
   @IBAction func rightBarButtonItemTapped(_ sender: UIBarButtonItem) {
     let enteredText = licenseInfoTextField.text ?? ""
-    licenseInfoEnteringPresenter?.saveInfoIfPossible(text: enteredText)
-    licenseInfoEnteringPresenter?.navigateToNextStep()
+    if enteredText == "" {
+      showWarningAlert()
+    } else {
+      licenseInfoEnteringPresenter?.saveInfoIfPossible(text: enteredText)
+      licenseInfoEnteringPresenter?.navigateToNextStep()
+    }
+  }
+  
+  /// for skip button
+  private func showWarningAlert() {
+    let alert = UIAlertController(title: "",
+                                  message: alertText,
+                                  preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Ввести номер",
+                                  style: .default,
+                                  handler: nil))
+    alert.addAction(UIAlertAction(title: "Пропустить",
+                                  style: .default,
+                                  handler: { [weak self] _ in
+                                    self?.licenseInfoEnteringPresenter?.navigateToNextStep()
+    }))
+    
+    present(alert, animated: true, completion: nil)
   }
 }
 

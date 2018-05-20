@@ -73,6 +73,8 @@ class CapabilitiesViewController: UIViewController {
     }
   }
   
+  // MARK: @IBActions
+  
   @IBAction func nextCapabilityButtonTapped(_ sender: Any) {
     scrollPageToNextIfPossible()
   }
