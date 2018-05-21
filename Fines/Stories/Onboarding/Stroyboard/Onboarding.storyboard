@@ -82,6 +82,7 @@
                             <constraint firstItem="qLq-z0-bWX" firstAttribute="leading" secondItem="R6H-Ec-iCz" secondAttribute="leading" id="s3T-fi-p1g"/>
                             <constraint firstItem="QIa-YU-6VW" firstAttribute="top" secondItem="ukU-E2-V5F" secondAttribute="bottom" constant="30" id="zDT-ff-gAu"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="g8W-Ml-IT1"/>
                     </view>
                     <navigationItem key="navigationItem" id="3AC-tq-CNA"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -105,6 +106,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="А111АА 77" textAlignment="center" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="eQd-tW-gtf" userLabel="License info textField">
                                 <rect key="frame" x="0.0" y="263.5" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="S69-FB-n7B"/>
                                 </constraints>
