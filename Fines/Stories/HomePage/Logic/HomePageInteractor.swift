@@ -11,7 +11,7 @@
 protocol HomePageInteractor: class {
   
   var homePageInteractorOutput: HomePageInteractorOutput? { set get }
-  var databaseClient: DatabaseCore? { set get }
+  var databaseClient: DatabaseClient? { set get }
   
   func requestLicensesInfo()
 }
@@ -28,7 +28,7 @@ protocol HomePageInteractorOutput: class {
 class HomePageInteractorDefault: HomePageInteractor {
   
   weak var homePageInteractorOutput: HomePageInteractorOutput?
-  var databaseClient: DatabaseCore?
+  var databaseClient: DatabaseClient?
   
   func requestLicensesInfo() {
     let vehiclePlates        = databaseClient?.selectAllVehiclePlates()        ?? []

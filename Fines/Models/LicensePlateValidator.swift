@@ -8,6 +8,9 @@
 
 class LicensePlateValidator {
   
+  /// Returns symbols, that can be on vehicle plates
+  private static let plateSymbols = "[АВЕКМНОРСТУХ]"
+  
   /// Validating current entered license plate
   ///
   /// - Parameter licensePlate: current text in text field
@@ -40,10 +43,5 @@ class LicensePlateValidator {
     let regex = "\\d{4}\(plateSymbols){2}(([0][1-9])|([1-9](\\d{1,2})))"
     
     return plate.matches(regex)
-  }
-  
-  /// Returns symbols, that can be on vehicle plates
-  private static var plateSymbols: String {
-    return "[АВЕКМНОРСТУХ]"
   }
 }

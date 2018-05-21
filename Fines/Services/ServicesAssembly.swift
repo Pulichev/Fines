@@ -18,7 +18,7 @@ class ServicesAssembly: Assembly {
       }
       .inObjectScope(.container)
     
-    container.register(DatabaseCore.self) { r in
+    container.register(DatabaseClient.self) { r in
       let databaseCore = DatabaseClientDefault()
       return databaseCore
     }

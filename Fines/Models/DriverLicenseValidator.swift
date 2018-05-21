@@ -8,6 +8,9 @@
 
 class DriverLicenseValidator {
   
+  /// Returns symbols, that can be on vehicle plates
+  private static let driverLicenseSymbols = "[АВЕКМНОРСТУХ]"
+  
   /// Validating current driver license of vehicle registration
   ///
   /// - Parameter licenseNumber: current text in text field
@@ -22,10 +25,5 @@ class DriverLicenseValidator {
     let regex = "\\d{2}\(driverLicenseSymbols){2}\\d{6}"
     
     return license.matches(regex)
-  }
-  
-  /// Returns symbols, that can be on vehicle plates
-  private static var driverLicenseSymbols: String {
-    return "[АВЕКМНОРСТУХ]"
   }
 }

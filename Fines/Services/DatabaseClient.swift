@@ -8,7 +8,7 @@
 
 import SQLite
 
-protocol DatabaseCore: class {
+protocol DatabaseClient: class {
   
   func insert(vehiclePlate: String)
   func insert(vehicleRegistration: String)
@@ -19,7 +19,7 @@ protocol DatabaseCore: class {
   func selectAllDriverRegistrations() -> [String]
 }
 
-class DatabaseClientDefault: DatabaseCore {
+class DatabaseClientDefault: DatabaseClient {
   
   // MARK: Initializing
   

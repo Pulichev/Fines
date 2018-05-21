@@ -19,7 +19,7 @@ class LicensesEnteredInfoValues {
 
 protocol LicenseInfoEnteringInteractor: class {
   
-  var databaseClient: DatabaseCore? { set get }
+  var databaseClient: DatabaseClient? { set get }
   
   func saveLicensesInfo(_ info: LicensesEnteredInfoValues?)
 }
@@ -28,7 +28,7 @@ protocol LicenseInfoEnteringInteractor: class {
 
 class LicenseInfoEnteringInteractorDefault: LicenseInfoEnteringInteractor {
   
-  var databaseClient: DatabaseCore?
+  var databaseClient: DatabaseClient?
   
   func saveLicensesInfo(_ info: LicensesEnteredInfoValues?) {
     guard let infoValues = info else { return }

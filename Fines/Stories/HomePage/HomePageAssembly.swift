@@ -33,7 +33,7 @@ class HomePageAssembly: Assembly {
   private func registerInteractors(container: Container) {
     container.register(HomePageInteractor.self) { r in
       let interactor = HomePageInteractorDefault()
-      let databaseClient = r.resolve(DatabaseCore.self)
+      let databaseClient = r.resolve(DatabaseClient.self)
       interactor.databaseClient = databaseClient
       return interactor
     }
