@@ -57,7 +57,8 @@ extension CapabilitiesViewController: UIPageViewControllerDataSource {
   
   func pageViewController(_ pageViewController: UIPageViewController,
                           viewControllerBefore viewController: UIViewController) -> UIViewController? {
-    var index = (viewController as? CapabilityViewController)?.index ?? 0
+    guard let capabilityViewController = viewController as? CapabilityViewController else { return nil }
+    var index = capabilityViewController.index
     
     if index == 0 {
       return nil
@@ -70,7 +71,9 @@ extension CapabilitiesViewController: UIPageViewControllerDataSource {
   
   func pageViewController(_ pageViewController: UIPageViewController,
                           viewControllerAfter viewController: UIViewController) -> UIViewController? {
-    var index = (viewController as? CapabilityViewController)?.index ?? 0
+    guard let capabilityViewController = viewController as? CapabilityViewController else { return nil }
+    var index = capabilityViewController.index
+    
     index += 1
     
     return createPreviewViewController(atIndex: index)
