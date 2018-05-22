@@ -14,17 +14,27 @@ extension String {
   }
   
   var cyrrilicTransliterated: String? {
-    return self.replacingOccurrences(of: "A", with: "А")
-    .replacingOccurrences(of: "B", with: "В")
-    .replacingOccurrences(of: "E", with: "Е")
-    .replacingOccurrences(of: "K", with: "К")
-    .replacingOccurrences(of: "M", with: "М")
-    .replacingOccurrences(of: "H", with: "Н")
-    .replacingOccurrences(of: "O", with: "О")
-    .replacingOccurrences(of: "P", with: "Р")
-    .replacingOccurrences(of: "C", with: "С")
-    .replacingOccurrences(of: "T", with: "Т")
-    .replacingOccurrences(of: "Y", with: "У")
-    .replacingOccurrences(of: "X", with: "Х")
+    let correspondenceDictionary: [String: String] = [
+      "A": "А",
+      "B": "В",
+      "E": "Е",
+      "K": "К",
+      "M": "М",
+      "H": "Н",
+      "O": "О",
+      "P": "Р",
+      "C": "С",
+      "T": "Т",
+      "Y": "У",
+      "X": "Х"
+      ]
+    
+    var transliteratedSelf = self
+    
+    correspondenceDictionary.forEach {
+      transliteratedSelf = transliteratedSelf.replacingOccurrences(of: $0.key, with: $0.value)
+    }
+    
+    return transliteratedSelf
   }
 }
