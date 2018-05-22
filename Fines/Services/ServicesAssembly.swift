@@ -13,14 +13,12 @@ class ServicesAssembly: Assembly {
   
   func assemble(container: Container) {
     container.register(Router.self) { r in
-      let router = RouterDefault()
-      return router
+      return RouterDefault()
       }
       .inObjectScope(.container)
     
     container.register(DatabaseClient.self) { r in
-      let databaseCore = DatabaseClientDefault()
-      return databaseCore
+      return DatabaseClientDefault()
     }
     .inObjectScope(.container)
   }

@@ -34,19 +34,18 @@ extension CapabilitiesViewController: UIPageViewControllerDelegate {
     guard !pageControllerIsAnimating else { return }
     let nextIndex = currentIndex + 1
     
-    if nextIndex < capabilitiesDataSource.count,
-      let previewViewController = createPreviewViewController(atIndex: nextIndex) {
-      pageControllerIsAnimating = true
-      pageController.setViewControllers([previewViewController],
-                                        direction: .forward,
-                                        animated: true,
-                                        completion: { isCompleted in
-                                          if isCompleted {
-                                            self.currentIndex = nextIndex
-                                            self.pageControl.currentPage = nextIndex
-                                            self.pageControllerIsAnimating = false
-                                          }
-      })
+    guard nextIndex < capabilitiesDataSource.count,
+      let previewViewController = createPreviewViewController(atIndex: nextIndex) else { return }
+    pageControllerIsAnimating = true
+    pageController.setViewControllers([previewViewController],
+                                      direction: .forward,
+                                      animated: true)
+    { isCompleted in
+      if isCompleted {
+        self.currentIndex = nextIndex
+        self.pageControl.currentPage = nextIndex
+        self.pageControllerIsAnimating = false
+      }
     }
   }
 }
